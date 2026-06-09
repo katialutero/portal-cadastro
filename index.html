@@ -7,9 +7,7 @@ HTML
     <title>Portal Cadastro - Haytek</title>
     <style>
         /* --- ESTILOS GERAIS --- */
-        html {
-            scroll-behavior: smooth; 
-        }
+        html { scroll-behavior: smooth; }
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
@@ -61,11 +59,9 @@ HTML
             text-align: left; 
             display: block;
         }
-        .btn-menu:hover { 
-            background-color: #1f618d; 
-            border-left: 5px solid #ffffff; 
-        }
+        .btn-menu:hover { background-color: #1f618d; border-left: 5px solid #ffffff; }
         
+        /* Submenu Lateral */
         .submenu {
             display: none; 
             background-color: #1f618d;
@@ -124,7 +120,7 @@ HTML
 
         .conteudo-principal { 
             padding: 30px; 
-            max-width: 900px; 
+            max-width: 1000px; 
             margin: 0 auto; 
             width: 100%;
             box-sizing: border-box;
@@ -132,7 +128,7 @@ HTML
         .pagina { display: none; }
         .pagina-ativa { display: block; }
 
-        /* --- ESTILO VERDANA PARA CAMPOS DE CÓPIA --- */
+        /* --- ESTILOS DOS SCRIPTS (FONTE VERDANA) --- */
         .script-container {
             background-color: #fff;
             border: 1px solid #ddd;
@@ -148,10 +144,10 @@ HTML
             border-left: 4px solid #2980b9;
             margin-bottom: 15px;
             white-space: pre-wrap; 
-            font-family: 'Verdana', Geneva, sans-serif; /* FONTE VERDANA AQUI */
+            font-family: 'Verdana', Geneva, sans-serif; /* FONTE VERDANA */
             font-size: 14px;
             line-height: 1.5;
-            color: #444;
+            color: #333;
         }
         .btn-copiar {
             background-color: #27ae60;
@@ -177,6 +173,8 @@ HTML
             border-radius: 4px;
         }
         .caixa-manual h3 { margin-top: 0; margin-bottom: 10px; font-size: 1.1em; }
+        .lista-roteiro { padding-left: 20px; margin-top: 5px; margin-bottom: 0; }
+        .lista-roteiro li { margin-bottom: 10px; }
 
         /* --- TABELAS --- */
         .tabela-niveis {
@@ -190,37 +188,25 @@ HTML
         .tabela-niveis th { background-color: #2980b9; color: white; font-weight: bold; }
         .tabela-niveis tr:nth-child(even) { background-color: #f9f9f9; }
 
-        /* --- ESTILO ESPECIAL PARA REDES --- */
+        /* --- ESTILO REDES --- */
         .card-rede {
-            background-color: white;
-            border-radius: 10px;
-            border-top: 5px solid #2c3e50;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            margin-bottom: 30px;
+            background-color: white; border-radius: 10px; border-top: 5px solid #2c3e50;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 25px; margin-bottom: 30px;
         }
-        .grid-precos {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        .preco-item {
-            background-color: #f0f4f8;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-        }
-        .preco-item strong { display: block; color: #2980b9; font-size: 0.8em; text-transform: uppercase; }
+        .grid-precos { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .preco-item { background-color: #f0f4f8; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #d1d9e6; }
+        .preco-item strong { display: block; color: #2980b9; font-size: 0.85em; text-transform: uppercase; margin-bottom: 5px; }
 
-        /* --- OUTROS --- */
+        /* --- DESTAQUES --- */
         .subtitulo-destaque {
             text-align: center; color: #2980b9; font-size: 1.3em; font-weight: bold; background-color: #e8f4fd;
-            padding: 15px; border-radius: 8px; border-left: 5px solid #3498db; border-right: 5px solid #3498db;
-            margin: 30px 0;
+            padding: 15px; border-radius: 8px; border-left: 5px solid #3498db; border-right: 5px solid #3498db; margin: 30px 0;
         }
         .campo-editavel { border-bottom: 2px dashed #27ae60; padding: 0 5px; outline: none; cursor: text; }
-        .lista-links li { margin-bottom: 10px; list-style: none; }
+
+        /* --- LINKS --- */
+        .lista-links { list-style: none; padding: 0; margin: 0; }
+        .lista-links li { margin-bottom: 10px; }
         .lista-links a { display: block; background-color: #ecf0f1; color: #2c3e50; padding: 12px 15px; text-decoration: none; border-radius: 5px; border-left: 5px solid #2980b9; font-weight: bold; transition: 0.3s; }
         .lista-links a:hover { background-color: #2980b9; color: white; }
 
@@ -240,9 +226,10 @@ HTML
         <button class="btn-menu" onclick="mudarPagina('pagina-boas-vindas')">Boas-Vindas</button>
         <button class="btn-menu" onclick="mudarPagina('pagina-alteracoes-precos')">Alterações de Preços</button>
         
-        <button class="btn-menu" onclick="mudarPagina('pagina-marca')">Marca Exclusiva</button>
+        <button class="btn-menu" style="margin-bottom: 0;" onclick="mudarPagina('pagina-marca')">Marca Exclusiva</button>
         <div id="submenu-marca" class="submenu">
             <a href="#ancora-niveis" onclick="mudarPagina('pagina-marca')">↳ Níveis e Regras</a>
+            <a href="#ancora-faturamento" onclick="mudarPagina('pagina-marca')">↳ Faturamento e Tabelas</a>
             <a href="#ancora-roteiro" onclick="mudarPagina('pagina-marca')">↳ Roteiro do Processo</a>
             <a href="#ancora-regras" onclick="mudarPagina('pagina-marca')">↳ Regras Adicionais</a>
             <a href="#ancora-scripts-marca" onclick="mudarPagina('pagina-marca')">↳ Scripts de E-mail</a>
@@ -254,7 +241,7 @@ HTML
 
     <div class="area-direita">
         <div class="area-pesquisa">
-            <input type="text" id="campoPesquisa" class="input-pesquisa" placeholder="🔍 Pesquise aqui..." onkeyup="pesquisarScripts()">
+            <input type="text" id="campoPesquisa" class="input-pesquisa" placeholder="🔍 Pesquise aqui por qualquer palavra..." onkeyup="pesquisarScripts()">
             <img src="Logo_Haytek_RGB.png" alt="Logo Haytek" class="logo-canto-direito">
         </div>
 
@@ -262,11 +249,8 @@ HTML
 
             <div id="pagina-redes" class="pagina">
                 <h1>Redes - Detalhes e Regras</h1>
-                <p class="descricao">Consulta de especificações técnicas e regras comerciais por rede.</p>
-
                 <div class="card-rede">
-                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Airton Ótica <small style="font-size: 0.5em; color: #7f8c8d; float: right;">Código: MA0008</small></h2>
-                    
+                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Airton Ótica <small style="font-size: 0.5em; color: #7f8c8d; float: right;">Código Principal: MA0008</small></h2>
                     <table class="tabela-niveis">
                         <tr>
                             <td><strong>Key Account:</strong> Sim ✅</td>
@@ -279,78 +263,126 @@ HTML
                             <td><strong>Grupo Comercial:</strong> Não ❌</td>
                         </tr>
                         <tr>
-                            <td><strong>Limite Crédito Pré-def.:</strong> Não ❌</td>
+                            <td><strong>Limite Crédito:</strong> Não ❌</td>
                             <td><strong>Prazo Pré-definido:</strong> Não ❌</td>
                             <td><strong>Campanha Cupons:</strong> Não ❌</td>
                         </tr>
                     </table>
-
                     <div class="grid-precos">
-                        <div class="preco-item">
-                            <strong>Lentes Surfaçadas</strong>
-                            Base: Padrão <br> Negociada: Não
-                        </div>
-                        <div class="preco-item">
-                            <strong>Lentes de Estoque</strong>
-                            Base: Padrão Lançamento <br> <span style="color: #e67e22; font-weight: bold;">Negociada: Sim (MA0008)</span>
-                        </div>
-                        <div class="preco-item">
-                            <strong>Serviços</strong>
-                            Base: Padrão <br> Negociada: Não
-                        </div>
+                        <div class="preco-item"><strong>Lentes Surfaçadas</strong>Base: Padrão<br>Negociada: Não</div>
+                        <div class="preco-item"><strong>Lentes de Estoque</strong>Base: Padrão Lançamento<br><span style="color:#e67e22; font-weight:bold;">Negociada: Sim (MA0008)</span></div>
+                        <div class="preco-item"><strong>Preços Serviço</strong>Base: Padrão</div>
                     </div>
                 </div>
             </div>
 
             <div id="pagina-scripts" class="pagina pagina-ativa">
                 <h1>Scripts para Respostas de E-mail</h1>
-                <div class="script-container"><div class="script-title">Solicitação de Cadastro</div><div class="script-text" id="script1">Olá Person, bom dia ou boa tarde!
+                <div class="script-container"><div class="script-title">Solicitação de Cadastro - Cliente Direto</div><div class="script-text" id="s1">Olá Person, bom dia ou boa tarde!
 Para darmos continuidade ao seu cadastro, precisamos saber se você já possui alguma loja registrada conosco. Se sim, poderia nos informar o código ou CNPJ?
-Caso este seja seu primeiro cadastro, precisaremos direcioná-lo para nossa equipe de vendas.</div><button class="btn-copiar" onclick="copiarTexto('script1')">Copiar Script</button></div>
+Caso este seja seu primeiro cadastro, precisaremos direcioná-lo para nossa equipe de vendas.</div><button class="btn-copiar" onclick="copiarTexto('s1')">Copiar Script</button></div>
                 
-                <div class="script-container"><div class="script-title">Cadastro Finalizado</div><div class="script-text" id="script2">Olá Person, bom dia ou boa tarde!
+                <div class="script-container"><div class="script-title">Cadastro Finalizado</div><div class="script-text" id="s2">Olá Person, bom dia ou boa tarde!
 Cadastro concluído. 
-Código Haytek:</div><button class="btn-copiar" onclick="copiarTexto('script2')">Copiar Script</button></div>
+Código Haytek:</div><button class="btn-copiar" onclick="copiarTexto('s2')">Copiar Script</button></div>
+
+                <div class="script-container"><div class="script-title">Solicitação de Dados para Desassociar</div><div class="script-text" id="s3">Olá Person, bom dia ou boa tarde!
+Por favor, poderia nos fornecer: Nome do responsável, Telefone atualizado, email, Endereço de entrega, Vendedor, Roteiro.
+Assim que recebermos essas informações, daremos continuidade a sua solicititação.</div><button class="btn-copiar" onclick="copiarTexto('s3')">Copiar Script</button></div>
+
+                <div class="script-container"><div class="script-title">Separação Carol Devido à Regra Comercial</div><div class="script-text" id="s4">Devido à homologação do Grupo Carol, e conforme regra comercial vigente, não será possível manter vinculados os códigos que não pertencem ao Grupo Carol.
+Por favor, nos envie a confirmação para separação em até 3 dias úteis. Em caso de não envio será feito o bloqueio comercial.</div><button class="btn-copiar" onclick="copiarTexto('s4')">Copiar Script</button></div>
+
+                <div class="script-container"><div class="script-title">Bloqueio Comercial - Regra Carol</div><div class="script-text" id="s5">Prezados,
+Verificamos que os códigos identificados anteriormente como “Carol” em nosso sistema não constam na lista atualizada. Realizamos o descredenciamento com bloqueio comercial. Para reativação, envie os novos dados.</div><button class="btn-copiar" onclick="copiarTexto('s5')">Copiar Script</button></div>
             </div>
 
             <div id="pagina-boas-vindas" class="pagina">
                 <h1>Boas-Vindas</h1>
                 <h2 class="subtitulo-destaque">Todo atendimento se inicia com nossa apresentação e a identificação do cliente.</h2>
-                <div class="script-container"><div class="script-title">1ª Etapa - Apresentação</div><div class="script-text" id="etapa1">👋 Olá, bom dia/boa tarde!
-Seja muito bem-vindo(a) à Haytek! Eu sou a (o) [Nome] do Cadastro. Falo com (a)(o) [Nome de contato no CRM]?</div><button class="btn-copiar" onclick="copiarTexto('etapa1')">Copiar 1ª Etapa</button></div>
+                <div class="script-container"><div class="script-title">Fluxo de Boas-Vindas (Todas as Etapas)</div><div class="script-text" id="bv1">👋 Olá, bom dia/boa tarde! Eu sou a(o) [Nome] do Cadastro. Falo com [Nome]?
+📦 O endereço que temos é [Endereço], está correto?
+✅ O email [Email] está correto? Recebeu o link da senha?
+📧 Gostaria de adicionar outro contato?
+✨ Agradecemos pela parceria! Conte com a gente!</div><button class="btn-copiar" onclick="copiarTexto('bv1')">Copiar Fluxo</button></div>
             </div>
 
             <div id="pagina-alteracoes-precos" class="pagina">
                 <h1>Alterações de Preços</h1>
                 <h2 class="subtitulo-destaque" style="background-color: #e8f5e9; color: #27ae60; border-color: #2ecc71;">
-                    💵 Dólar do Mês: R$ <span id="valor-dolar" class="campo-editavel" contenteditable="true" onblur="salvarDolar()">4,98</span> ✏️
+                    💵 Dólar do Mês: R$ <span id="valor-dolar" class="campo-editavel" contenteditable="true" onblur="salvarDolar()">5,25</span> ✏️
                 </h2>
-                <div class="script-container"><div class="script-title">Alteração de Preço - Laboratório</div><div class="script-text" id="script3">Olá Person, bom dia ou boa tarde!
-Preços aplicados conforme solicitado. Tabela negociada: </div><button class="btn-copiar" onclick="copiarTexto('script3')">Copiar Script</button></div>
+                <div class="script-container"><div class="script-title">Alteração de Preço - Laboratório</div><div class="script-text" id="pr1">Olá Person, bom dia ou boa tarde!
+Preços aplicados conforme solicitado. Tabela negociada: </div><button class="btn-copiar" onclick="copiarTexto('pr1')">Copiar Script</button></div>
+                <div class="script-container"><div class="script-title">Autorização para Preços - Estoque</div><div class="script-text" id="pr2">Olá Person, bom dia ou boa tarde! @Person (Responsável)
+Cliente: [Nome] | Produto: [Produto] | GP: [%]
+Podemos aplicar os valores?</div><button class="btn-copiar" onclick="copiarTexto('pr2')">Copiar Script</button></div>
             </div>
 
             <div id="pagina-marca" class="pagina">
                 <h1>Marca Exclusiva</h1>
+                
                 <div class="script-container" id="ancora-niveis">
-                    <div class="script-title">⭐ Regras e Níveis do Programa (2026)</div>
+                    <div class="script-title">⭐ Regras e Níveis 2026</div>
                     <table class="tabela-niveis">
-                        <thead><tr><th>Nível</th><th>Volume</th><th>Tipo / Custo</th><th>Prazo</th></tr></thead>
+                        <thead><tr><th>Nível</th><th>Volume</th><th>Certificado / Custo</th><th>Prazo</th></tr></thead>
                         <tbody>
-                            <tr><td><strong>Essencial</strong></td><td>8 a 49 pares</td><td>Arte Própria (Cliente paga R$8)</td><td>4 dias</td></tr>
-                            <tr><td><strong>Superior</strong></td><td>50 a 99 pares</td><td>Arte Própria (Haytek paga)</td><td>4 dias</td></tr>
-                            <tr><td><strong>Elite</strong></td><td>100+ pares</td><td>Personalizada (Haytek paga)</td><td>20 dias</td></tr>
+                            <tr><td><strong>Essencial</strong></td><td>8 a 49 pares</td><td>Padrão ou Arte Própria (Custo Cliente R$8)</td><td>4 dias</td></tr>
+                            <tr><td><strong>Superior</strong></td><td>50 a 99 pares</td><td>Padrão ou Arte Própria (Pago Haytek)</td><td>4 dias</td></tr>
+                            <tr><td><strong>Elite</strong></td><td>100+ pares</td><td>Padrão ou Personalizada (Pago Haytek)</td><td>20 dias (se pers.)</td></tr>
                         </tbody>
                     </table>
+                    <div class="caixa-manual" style="border-left-color: #e74c3c; background-color: #fdedec;">
+                        <h3 style="color: #c0392b;">⚠️ Pré-Marca Exclusiva</h3>
+                        Novos parceiros Superior/Elite têm <strong>90 dias de teste</strong>. Se não atingirem o volume, pagam R$ 8,00 por certificado.
+                    </div>
+                </div>
+
+                <div class="script-container" id="ancora-faturamento">
+                    <div class="script-title">💲 Faturamento e Tabelas</div>
+                    <div class="caixa-manual" style="border-left-color: #27ae60; background-color: #eafaf1;">
+                        • <strong>Tabelas Criadas:</strong> Padrão, 5% e 10% para nível Essencial.<br>
+                        • <strong>Tabelas Negociadas:</strong> Se o cliente tiver, o valor de R$ 8,00 deve ser embutido no cálculo.<br>
+                        • <strong>Tabela Base:</strong> Se for base, retire a negociada e aplique a base correta com acréscimo.
+                    </div>
+                </div>
+
+                <div class="script-container" id="ancora-roteiro">
+                    <div class="script-title">📋 Roteiro do Processo</div>
+                    <div class="caixa-manual" style="border-left-color: #3498db; background-color: #e8f4fd;">
+                        <strong>Vendedor:</strong> Consulta Siglas e preenche formulário Google.
+                    </div>
+                    <div class="caixa-manual" style="border-left-color: #f1c40f; background-color: #fff8e1;">
+                        <strong>Cadastro:</strong> Copia dados da Planilha Respostas para Planilha Registro. Retira dados do CRM. Envia contrato via DocuSign. Sinaliza Marcapropria@haytek.com.br.
+                    </div>
+                </div>
+
+                <div class="script-container" id="ancora-regras">
+                    <div class="script-title">📖 Procedimentos Adicionais</div>
+                    <div class="caixa-manual">
+                        • <strong>Redes > 30 lojas:</strong> Cadastro massivo via ticket para equipe Monique.<br>
+                        • <strong>Transitions:</strong> Não possuem marca exclusiva.<br>
+                        • <strong>Erro Certificado:</strong> 1º Pedido erro, 2º Data entrada, 3º Produto, 4º Transitions, 5º Painel Logística.
+                    </div>
+                </div>
+
+                <div id="ancora-scripts-marca">
+                    <div class="script-container"><div class="script-title">Contrato Enviado</div><div class="script-text" id="m1">Olá Person, bom dia ou boa tarde!
+Encaminhamos o contrato para assinatura. Oriente o cliente a assinar e datar. Assim que assinado, daremos continuidade com o laboratório.</div><button class="btn-copiar" onclick="copiarTexto('m1')">Copiar Script</button></div>
+                    <div class="script-container"><div class="script-title">Contrato Assinado - Enviar ao Lab</div><div class="script-text" id="m2">Olá Person, bom dia ou boa tarde!
+Solicito a continuidade no processo conforme discriminado na planilha.</div><button class="btn-copiar" onclick="copiarTexto('m2')">Copiar Script</button></div>
                 </div>
             </div>
 
             <div id="pagina-avisos" class="pagina">
-                <h2>Mural de Avisos & Links</h2>
+                <h1>Mural de Links</h1>
                 <div class="script-container">
+                    <div class="script-title">Acesso Diário</div>
                     <ul class="lista-links">
-                        <li><a href="https://haytek8.myfreshworks.com/crm/sales/analytics" target="_blank">💻 CRM Freshworks</a></li>
-                        <li><a href="https://haytek.com.br/admin/dashboard" target="_blank">💻 Site Haytek (Admin)</a></li>
-                        <li><a href="http://www.sintegra.gov.br/" target="_blank">🔎 Consulta Sintegra</a></li>
+                        <li><a href="https://haytek8.myfreshworks.com/crm/sales/analytics" target="_blank">Freshworks CRM</a></li>
+                        <li><a href="https://haytek.com.br/admin/dashboard" target="_blank">Site Admin Haytek</a></li>
+                        <li><a href="https://protheusweb.haytek.com.br/webapp/" target="_blank">Protheus Web</a></li>
+                        <li><a href="http://www.sintegra.gov.br/" target="_blank">Consulta Sintegra</a></li>
                     </ul>
                 </div>
             </div>
@@ -374,7 +406,7 @@ Preços aplicados conforme solicitado. Tabela negociada: </div><button class="bt
         function copiarTexto(idElemento) {
             var texto = document.getElementById(idElemento).innerText;
             navigator.clipboard.writeText(texto).then(function() {
-                alert("Script copiado com sucesso (Fonte Verdana)!");
+                alert("Copiado com sucesso (Fonte Verdana)!");
             });
         }
 
