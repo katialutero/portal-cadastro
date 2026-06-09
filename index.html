@@ -211,10 +211,32 @@
             border: 1px solid #ddd;
             padding: 12px;
             text-align: left;
+            vertical-align: middle;
         }
         .tabela-niveis th { background-color: #2980b9; color: white; font-weight: bold; }
         .tabela-niveis tr:nth-child(even) { background-color: #f9f9f9; }
         .tabela-niveis tr:hover { background-color: #f1f1f1; }
+
+        /* --- ÍCONES INTERATIVOS DE STATUS --- */
+        .status-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            text-align: center;
+            min-width: 55px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: default;
+        }
+        .status-badge:hover {
+            transform: scale(1.08); /* Efeito interativo de crescer ao passar o mouse */
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        }
+        .status-sim { background-color: #27ae60; }
+        .status-nao { background-color: #e74c3c; }
 
         /* --- SUBTÍTULOS DE DESTAQUE --- */
         .subtitulo-destaque {
@@ -257,7 +279,7 @@
         }
         .lista-links a:hover { background-color: #2980b9; color: white; }
 
-        /* --- ESTILO REDES (NOVO) --- */
+        /* --- ESTILO REDES --- */
         .card-rede {
             background-color: white; border-radius: 10px; border-top: 5px solid #2c3e50;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 25px; margin-bottom: 30px;
@@ -331,19 +353,34 @@
                     
                     <table class="tabela-niveis">
                         <tr>
-                            <td><strong>Key Account:</strong> Sim</td>
-                            <td><strong>Marca Exclusiva:</strong> Sim</td>
-                            <td><strong>25 Contas:</strong> Não</td>
+                            <td><strong>Key Account:</strong></td>
+                            <td><span class="status-badge status-sim">Sim ✅</span></td>
+                            <td><strong>Marca Exclusiva:</strong></td>
+                            <td><span class="status-badge status-sim">Sim ✅</span></td>
                         </tr>
                         <tr>
-                            <td><strong>Emails compartilhados entre masters:</strong> Não</td>
-                            <td><strong>Master separado por estado:</strong> Não</td>
-                            <td><strong>Grupo comercial:</strong> Não</td>
+                            <td><strong>25 Contas:</strong></td>
+                            <td><span class="status-badge status-nao">Não ❌</span></td>
+                            <td><strong>Emails compartilhados entre masters:</strong></td>
+                            <td><span class="status-badge status-nao">Não ❌</span></td>
                         </tr>
                         <tr>
-                            <td><strong>Limite de crédito pré-definido:</strong> Não</td>
-                            <td><strong>Prazo pré-definido:</strong> Não</td>
-                            <td><strong>Campanha de Cupons:</strong> Não</td>
+                            <td><strong>Master separado por estado:</strong></td>
+                            <td><span class="status-badge status-nao">Não ❌</span></td>
+                            <td><strong>Grupo comercial:</strong></td>
+                            <td><span class="status-badge status-nao">Não ❌</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Limite de crédito pré-definido:</strong></td>
+                            <td><span class="status-badge status-nao">Não ❌</span></td>
+                            <td><strong>Prazo pré-definido:</strong></td>
+                            <td><span class="status-badge status-nao">Não ❌</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Campanha de Cupons:</strong></td>
+                            <td><span class="status-badge status-nao">Não ❌</span></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </table>
                     
