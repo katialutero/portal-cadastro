@@ -19,7 +19,7 @@
             min-height: 100vh; 
         }
         
-        /* --- MENU LATERAL (AGORA FIXO) --- */
+        /* --- MENU LATERAL FIXO --- */
         .menu-lateral {
             background-color: #2980b9; 
             width: 260px; 
@@ -27,21 +27,13 @@
             box-sizing: border-box;
             flex-shrink: 0; 
             box-shadow: 2px 0 5px rgba(0,0,0,0.1); 
-            
-            /* COMANDOS PARA FIXAR O MENU */
             position: sticky;
             top: 0;
-            height: 100vh; /* Ocupa exatamente 100% da altura da tela */
-            overflow-y: auto; /* Cria barra de rolagem no menu caso tenha muitos botões */
+            height: 100vh;
+            overflow-y: auto; 
         }
-        /* Personalizando a barra de rolagem do menu lateral para ficar elegante */
-        .menu-lateral::-webkit-scrollbar {
-            width: 6px;
-        }
-        .menu-lateral::-webkit-scrollbar-thumb {
-            background-color: #1f618d; 
-            border-radius: 10px;
-        }
+        .menu-lateral::-webkit-scrollbar { width: 6px; }
+        .menu-lateral::-webkit-scrollbar-thumb { background-color: #1f618d; border-radius: 10px; }
 
         .logo-menu {
             color: white;
@@ -68,10 +60,7 @@
             text-align: left; 
             display: block;
         }
-        .btn-menu:hover { 
-            background-color: #1f618d; 
-            border-left: 5px solid #ffffff; 
-        }
+        .btn-menu:hover { background-color: #1f618d; border-left: 5px solid #ffffff; }
         
         /* --- SUBMENU LATERAL --- */
         .submenu {
@@ -90,11 +79,7 @@
             border-left: 5px solid transparent;
             transition: 0.3s;
         }
-        .submenu a:hover {
-            color: #fff;
-            background-color: #154360;
-            border-left: 5px solid #3498db;
-        }
+        .submenu a:hover { color: #fff; background-color: #154360; border-left: 5px solid #3498db; }
 
         /* --- ÁREA DIREITA --- */
         .area-direita {
@@ -217,7 +202,7 @@
         .tabela-niveis tr:nth-child(even) { background-color: #f9f9f9; }
         .tabela-niveis tr:hover { background-color: #f1f1f1; }
 
-        /* --- ÍCONES INTERATIVOS DE STATUS (BOTÕES) --- */
+        /* --- ÍCONES INTERATIVOS DE STATUS --- */
         .status-badge {
             display: inline-block;
             padding: 5px 12px;
@@ -321,7 +306,6 @@
         </div>
         
         <button class="btn-menu" onclick="mudarPagina('pagina-redes')">Redes</button>
-
         <button class="btn-menu" onclick="mudarPagina('pagina-avisos')">Mural de Avisos</button>
     </div>
 
@@ -334,12 +318,16 @@
 
         <div class="conteudo-principal">
 
+            <!-- ========================================== -->
+            <!-- PÁGINA REDES -->
+            <!-- ========================================== -->
             <div id="pagina-redes" class="pagina">
                 <h1 class="titulo-pagina">Redes - Detalhes e Regras</h1>
                 <p class="descricao titulo-pagina">Consulta de especificações técnicas e regras comerciais por rede.</p>
 
+                <!-- AIRTON ÓTICA -->
                 <div class="card-rede">
-                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Airton Otica <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Código Principal: MA0008</span></h2>
+                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Airton Ótica <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: MA0008</span></h2>
                     <table class="tabela-niveis">
                         <tr>
                             <td><strong>Key Account:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
@@ -364,27 +352,31 @@
                     </table>
                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 20px;">
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong> Base: Padrão<br>Negociada: Não
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong>
+                            Base: Padrão<br>Negociada: Não
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong> Base: Padrão de Lançamento<br><span style="color: #e67e22; font-weight: bold;">Negociada: Sim (MA0008)</span>
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong>
+                            Base: Padrão Lançamento<br><span style="color: #e67e22; font-weight: bold;">Negociada: Sim (MA0008)</span>
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong> Base: Padrão
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong>
+                            Base: Padrão
                         </div>
                     </div>
                 </div>
 
+                <!-- ÓTICAS DINIZ -->
                 <div class="card-rede">
-                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Óticas Diniz <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Código Principal: Não</span></h2>
+                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Óticas Diniz <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: Não</span></h2>
                     <table class="tabela-niveis">
                         <tr>
                             <td><strong>Key Account:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
-                            <td><strong>Marca Exclusiva:</strong></td> <td><span class="status-badge status-sim">Sim (PR0153)</span></td>
+                            <td><strong>Marca Exclusiva:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
                         </tr>
                         <tr>
-                            <td><strong>25 Contas:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
-                            <td><strong>Emails compartilhados:</strong></td> <td><span class="status-badge status-sim">Sim (nf_lentes@oticasdiniz.com.br)</span></td>
+                            <td><strong>25 Contas:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
+                            <td><strong>Emails compartilhados:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
                         </tr>
                         <tr>
                             <td><strong>Master separado por estado:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
@@ -401,19 +393,23 @@
                     </table>
                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 20px;">
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong> Base: DINIZ<br>Negociada: Não
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong>
+                            Base: DINIZ<br>Negociada: Não
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong> Base: DINIZ (NÃO MASSIVO)<br>Negociada: Não
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong>
+                            Base: DINIZ <small>(NÃO É MASSIVO)</small><br>Negociada: Não
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong> Base: DINIZ (NÃO MASSIVO)
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong>
+                            Base: DINIZ <small>(NÃO É MASSIVO)</small>
                         </div>
                     </div>
                 </div>
 
+                <!-- ÓTICAS CAROL -->
                 <div class="card-rede">
-                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Óticas Carol <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Código Principal: Não</span></h2>
+                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Óticas Carol <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: Não</span></h2>
                     <table class="tabela-niveis">
                         <tr>
                             <td><strong>Key Account:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
@@ -438,23 +434,27 @@
                     </table>
                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 20px;">
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong> Base: LUXOTTICA<br>Negociada: Não
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong>
+                            Base: LUXOTTICA<br>Negociada: Não
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong> Base: LUXOTTICA<br>Negociada: Não
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong>
+                            Base: LUXOTTICA<br>Negociada: Não
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong> Base: LUXOTTICA
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong>
+                            Base: LUXOTTICA
                         </div>
                     </div>
                 </div>
 
+                <!-- CHILLI BEANS -->
                 <div class="card-rede">
-                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">CHILLI BEANS <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Código Principal: Não</span></h2>
+                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Chilli Beans <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: Não</span></h2>
                     <table class="tabela-niveis">
                         <tr>
                             <td><strong>Key Account:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
-                            <td><strong>Marca Exclusiva:</strong></td> <td><span class="status-badge status-sim">Sim (MG2116)</span></td>
+                            <td><strong>Marca Exclusiva:</strong></td> <td><span class="status-badge status-sim">Sim</span> <small>(MG2116)</small></td>
                         </tr>
                         <tr>
                             <td><strong>25 Contas:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
@@ -465,7 +465,7 @@
                             <td><strong>Grupo comercial:</strong></td> <td><span class="status-badge status-nao">Não</span> <small>(OBSERVAR MASTER)</small></td>
                         </tr>
                         <tr>
-                            <td><strong>Limite de crédito pré-definido:</strong></td> <td>R$ 3.000,00</td>
+                            <td><strong>Limite de crédito pré-definido:</strong></td> <td><span style="color: #27ae60; font-weight: bold;">R$ 3.000,00</span></td>
                             <td><strong>Prazo pré-definido:</strong></td> <td>15/30,60,90,120,150</td>
                         </tr>
                         <tr>
@@ -475,23 +475,27 @@
                     </table>
                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 20px;">
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong> Base: Chilli Beans<br>Negociada: Não
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong>
+                            Base: CHILLI BEANS<br>Negociada: Não
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong> Base: Chilli Beans<br>Negociada: Não
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong>
+                            Base: CHILLI BEANS<br>Negociada: Não
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong> Base: Chilli Beans
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong>
+                            Base: CHILLI BEANS
                         </div>
                     </div>
                 </div>
 
+                <!-- OPTICALIA -->
                 <div class="card-rede">
-                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Opticalia <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Código Principal: Não</span></h2>
+                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Opticalia <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: Não</span></h2>
                     <table class="tabela-niveis">
                         <tr>
                             <td><strong>Key Account:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
-                            <td><strong>Marca Exclusiva:</strong></td> <td><span class="status-badge status-sim">Sim (SP3357)</span></td>
+                            <td><strong>Marca Exclusiva:</strong></td> <td><span class="status-badge status-sim">Sim</span> <small>(SP3357)</small></td>
                         </tr>
                         <tr>
                             <td><strong>25 Contas:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
@@ -512,19 +516,23 @@
                     </table>
                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 20px;">
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong> Base: OPTICALIA<br>Negociada: Não
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong>
+                            Base: OPTICALIA<br>Negociada: Não
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong> Base: OPTICALIA<br>Negociada: Não
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong>
+                            Base: OPTICALIA<br>Negociada: Não
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong> Base: OPTICALIA
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong>
+                            Base: OPTICALIA
                         </div>
                     </div>
                 </div>
 
+                <!-- ÓTICAS DO POVO -->
                 <div class="card-rede">
-                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">OTICAS DO POVO <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: RJ1686</span></h2>
+                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Óticas do Povo <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: RJ1686</span></h2>
                     <table class="tabela-niveis">
                         <tr>
                             <td><strong>Key Account:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
@@ -549,17 +557,21 @@
                     </table>
                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 20px;">
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong> Base: Ótica do Povo<br>Negociada: Não
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong>
+                            Base: ÓTICA DO POVO<br>Negociada: Não
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong> Base: Ótica do Povo<br>Negociada: Não
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong>
+                            Base: ÓTICA DO POVO<br>Negociada: Não
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong> Base: Ótica do Povo
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong>
+                            Base: ÓTICA DO POVO
                         </div>
                     </div>
                 </div>
 
+                <!-- ZEREZES -->
                 <div class="card-rede">
                     <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Zerezes <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: RJ1114</span></h2>
                     <table class="tabela-niveis">
@@ -577,28 +589,32 @@
                         </tr>
                         <tr>
                             <td><strong>Limite de crédito pré-definido:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
-                            <td><strong>Prazo pré-definido:</strong></td> <td>30/30,60,90,120</td>
+                            <td><strong>Prazo pré-definido:</strong></td> <td>15/30,60,90,120</td>
                         </tr>
                         <tr>
-                            <td><strong>Campanha de Cupons:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
+                            <td><strong>Campanha de Cupons:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
                             <td></td><td></td>
                         </tr>
                     </table>
                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 20px;">
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong> Base: Zerezers<br>Negociada: Não
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong>
+                            Base: ZEREZES<br>Negociada: Não
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong> Base: ZEREZES<br>Negociada: Não
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong>
+                            Base: ZEREZES<br>Negociada: Não
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong> Base: ZEREZES
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong>
+                            Base: ZEREZES
                         </div>
                     </div>
                 </div>
 
+                <!-- GRUPO LENS -->
                 <div class="card-rede">
-                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">GRUPO LENS <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód.: PR0033/34/35</span></h2>
+                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Grupo Lens <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: PR0033/PR0034/PR0035</span></h2>
                     <table class="tabela-niveis">
                         <tr>
                             <td><strong>Key Account:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
@@ -623,17 +639,21 @@
                     </table>
                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 20px;">
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong> Base: 20+<br>Negociada: Não
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong>
+                            Base: 20+<br>Negociada: Não
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong> Base: GRUPO LENS<br>Negociada: Não
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong>
+                            Base: GRUPO LENS<br>Negociada: Não
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong> Base: GRUPO LENS
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong>
+                            Base: GRUPO LENS
                         </div>
                     </div>
                 </div>
 
+                <!-- RUBI -->
                 <div class="card-rede">
                     <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Rubi <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: SP1207</span></h2>
                     <table class="tabela-niveis">
@@ -660,56 +680,24 @@
                     </table>
                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 20px;">
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong> Base: Rubi<br>Negociada: Não
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong>
+                            Base: Rubi<br>Negociada: Não
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong> Base: Rubi<br>Negociada: Não
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong>
+                            Base: Rubi<br>Negociada: Não
                         </div>
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong> Base: Rubi
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong>
+                            Base: Rubi
                         </div>
                     </div>
                 </div>
-
-                <div class="card-rede">
-                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Outlet dos Óculos <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: Não</span></h2>
-                    <table class="tabela-niveis">
-                        <tr>
-                            <td><strong>Key Account:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
-                            <td><strong>Marca Exclusiva:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>25 Contas:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
-                            <td><strong>Emails compartilhados:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Master separado por estado:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
-                            <td><strong>Grupo comercial:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Limite de crédito pré-definido:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
-                            <td><strong>Prazo pré-definido:</strong></td> <td>15/30,60,90</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Campanha de Cupons:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
-                            <td></td><td></td>
-                        </tr>
-                    </table>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 20px;">
-                        <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong> Base: OUTLET DOS ÓCULOS<br>Negociada: Não
-                        </div>
-                        <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong> Base: OUTLET DOS ÓCULOS<br>Negociada: Não
-                        </div>
-                        <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
-                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong> Base: OUTLET DOS ÓCULOS
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
+            <!-- ========================================== -->
+            <!-- PÁGINA 1: SCRIPTS GERAIS -->
+            <!-- ========================================== -->
             <div id="pagina-scripts" class="pagina pagina-ativa">
                 <h1 class="titulo-pagina">Scripts para Respostas de E-mail</h1>
                 <p class="descricao titulo-pagina">Este documento contém scripts padronizados para serem utilizados em respostas a solicitações via e-mail.</p>
@@ -775,55 +763,382 @@ email
 Gentileza verificar e nos retornar com as informações solicitadas.</div><button class="btn-copiar" onclick="copiarTexto('script10')">Copiar Script</button></div>
             </div>
 
+            <!-- ========================================== -->
+            <!-- PÁGINA 2: BOAS-VINDAS -->
+            <!-- ========================================== -->
             <div id="pagina-boas-vindas" class="pagina">
                 <h1 class="titulo-pagina">Boas-Vindas</h1>
-                <h2 class="subtitulo-destaque titulo-pagina">Todo atendimento se inicia com nossa apresentação e a identificação do cliente.</h2>
-                <div class="script-container"><div class="script-title">Fluxo Inicial</div><div class="script-text" id="etapa1">👋 Olá, bom dia/boa tarde! Seja muito bem-vindo(a) à Haytek! Sou a(o) [Nome] do Cadastro. Falo com [Nome]? Estamos felizes com seu cadastro e queremos garantir que tudo esteja certo.</div><button class="btn-copiar" onclick="copiarTexto('etapa1')">Copiar 1ª Etapa</button></div>
+                
+                <h2 class="subtitulo-destaque titulo-pagina">
+                    Todo atendimento se inicia com nossa apresentação e a identificação do cliente.
+                </h2>
+
+                <div class="script-container"><div class="script-title">1ª Etapa - Apresentação</div><div class="script-text" id="etapa1">👋 Olá, bom dia/boa tarde!
+Seja muito bem-vindo(a) à Haytek!
+Eu sou a (o)  [Nome] do Cadastro.
+Falo com (a)(o)  [Nome de contato no CRM]?
+Estamos felizes com seu cadastro e queremos garantir que tudo esteja certinho para o seu atendimento.</div><button class="btn-copiar" onclick="copiarTexto('etapa1')">Copiar 1ª Etapa</button></div>
+                <div class="script-container"><div class="script-title">2ª Etapa - Endereço</div><div class="script-text" id="etapa2">📦 O endereço de entrega que temos em nosso sistema é: [inserir endereço], está correto?</div><button class="btn-copiar" onclick="copiarTexto('etapa2')">Copiar 2ª Etapa</button></div>
+                <div class="script-container"><div class="script-title">3ª Etapa - E-mail e Senha</div><div class="script-text" id="etapa3">✅ O email cadastrado conosco é: [inserir email], está correto? 
+✅ Você recebeu o link para criar sua senha de acesso ao nosso site?</div><button class="btn-copiar" onclick="copiarTexto('etapa3')">Copiar 3ª Etapa</button></div>
+                <div class="script-container"><div class="script-title">4ª Etapa - Contatos Adicionais</div><div class="script-text" id="etapa4">📧 Gostaria de adicionar outro e-mail ou telefone para contato?</div><button class="btn-copiar" onclick="copiarTexto('etapa4')">Copiar 4ª Etapa</button></div>
+                <div class="script-container"><div class="script-title">5ª Etapa - Encerramento</div><div class="script-text" id="etapa5">Agradeço desde já pelas confirmações!
+É um prazer tê-lo conosco. Conte com a gente!
+✨ Agradecemos pela parceria!</div><button class="btn-copiar" onclick="copiarTexto('etapa5')">Copiar 5ª Etapa</button></div>
+
+                <div class="alerta-atencao titulo-pagina">
+                    <strong>Mensagem de atenção:</strong> Obs.: Em caso de contato por telefone ou chat oriundo do site, passar nosso contato para atendimento.
+                </div>
+                <div class="script-container"><div class="script-title">Contatos Haytek (Telefone / WhatsApp)</div><div class="script-text" id="contatos">Por favor, anote nosso contato telefônico e Whatsapp para seus próximos atendimentos:
+(21) 4040-4840 ou (21) 4040-2412.</div><button class="btn-copiar" onclick="copiarTexto('contatos')">Copiar Contatos</button></div>
             </div>
 
+            <!-- ========================================== -->
+            <!-- PÁGINA 3: ALTERAÇÕES DE PREÇOS -->
+            <!-- ========================================== -->
+            <div id="pagina-alteracoes-precos" class="pagina">
+                <h1 class="titulo-pagina">Alterações de Preços</h1>
+                <p class="descricao titulo-pagina">Informações e scripts para tratativas comerciais e ajustes de valores.</p>
+
+                <h2 class="subtitulo-destaque titulo-pagina" style="background-color: #e8f5e9; color: #27ae60; border-color: #2ecc71;">
+                    💵 Dólar do Mês: R$ <span id="valor-dolar" class="campo-editavel" contenteditable="true" onblur="salvarDolar()" title="Clique para editar!">4,98</span> ✏️
+                </h2>
+
+                <div class="script-container"><div class="script-title">Alteração de Preço - Laboratório</div><div class="script-text" id="script3">Olá Person, bom dia ou boa tarde!
+Preços aplicados conforme solicitado.
+Tabela negociada: 
+Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('script3')">Copiar Script</button></div>
+                
+                <div class="script-container"><div class="script-title">Alteração de Preço - Laboratório para Único Pedido</div><div class="script-text" id="script4">Olá Person, bom dia ou boa tarde!
+Desconto aplicado - R$  antes de finalizar o pedido confirme o valor.
+
+Valor normal R$ .
+Obs.: O desconto é aplicado somente no valor da lente, serviços se mantêm sem alterações.
+Por favor, avise quando o pedido estiver impresso para atualização do preço.
+Não feche o ticket. Ele será fechado pela equipe de cadastro assim que o preço for normalizado.
+Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('script4')">Copiar Script</button></div>
+                
+                <div class="script-container"><div class="script-title">Autorização para Preços - Lab</div><div class="script-text" id="script5">Olá Person, bom dia ou boa tarde!
+@Person (Responsável por autorizar)
+Cliente: 
+Ramo: 
+Podemos alterar para tabela [Nome da Tabela solicitada] no Lab?
+Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('script5')">Copiar Script</button></div>
+                
+                <div class="script-container"><div class="script-title">Autorização para Preços - Estoque</div><div class="script-text" id="script6">Olá Person, bom dia ou boa tarde!
+@Person (Responsável por autorizar)
+Cliente: [Nome fantasia]
+Ramo: 
+Produto: [Nome do Produto]  GP: [Percentual]
+Podemos aplicar os valores?
+
+Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('script6')">Copiar Script</button></div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- PÁGINA 4: MARCA EXCLUSIVA -->
+            <!-- ========================================== -->
             <div id="pagina-marca" class="pagina">
                 <h1 class="titulo-pagina">Marca Exclusiva</h1>
                 <p class="descricao titulo-pagina">Scripts e Procedimentos de apoio para o programa da Marca Exclusiva.</p>
 
                 <div class="script-container" id="ancora-niveis">
                     <div class="script-title">⭐ Regras e Níveis do Programa (2026)</div>
+                    <p style="margin-top: 0; font-size: 0.95em; color: #555;">Tabela comparativa atualizada para impressão sob demanda.</p>
+                    
                     <table class="tabela-niveis">
                         <thead>
-                            <tr><th>Nível</th><th>Volume</th><th>Custo Certificado</th><th>Prazo</th></tr>
+                            <tr>
+                                <th>Nível</th>
+                                <th>Volume (Pares/Mês)</th>
+                                <th>Tipo de Certificado / Custo</th>
+                                <th>Prazo de Produção</th>
+                            </tr>
                         </thead>
                         <tbody>
-                            <tr><td>Essencial</td><td>8 a 49 pares</td><td>Cliente (R$ 8,00 se arte própria)</td><td>4 dias</td></tr>
-                            <tr><td>Superior</td><td>50 a 99 pares</td><td>Haytek (Grátis*)</td><td>4 dias</td></tr>
-                            <tr><td>Elite</td><td>100+ pares</td><td>Haytek (Grátis*)</td><td>20 dias (Pers.)</td></tr>
+                            <tr>
+                                <td><strong>Essencial</strong></td>
+                                <td>8 a 49 pares</td>
+                                <td>Padrão (várias cores) ou Arte Própria (Custo do Cliente)</td>
+                                <td>4 dias úteis</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Superior</strong></td>
+                                <td>50 a 99 pares</td>
+                                <td>Padrão (várias cores) ou Arte Própria (Pago pela Haytek)</td>
+                                <td>4 dias úteis</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Elite</strong></td>
+                                <td>100+ pares</td>
+                                <td>Padrão, Arte Própria ou Personalizada (Pago pela Haytek)</td>
+                                <td>4 dias úteis (20 dias se personalizada)</td>
+                            </tr>
                         </tbody>
                     </table>
+
+                    <div class="caixa-manual" style="border-left-color: #e74c3c; background-color: #fdedec;">
+                        <h3 style="color: #c0392b;">⚠️ Pré-Marca Exclusiva (Teste de Volume)</h3>
+                        <p style="margin-bottom: 0;">Todo novo parceiro que iniciar nos níveis <strong>Superior ou Elite</strong> passará por um período de teste de <strong>3 meses (90 dias)</strong>.</p>
+                    </div>
+
+                    <div class="caixa-manual" style="border-left-color: #27ae60; background-color: #eafaf1; margin-top: 15px;">
+                        <h3 style="color: #219150;">💲 Regras de Cobrança e Tabelas (Custo R$ 8,00)</h3>
+                        <ul class="lista-roteiro">
+                            <li><strong>Nível Essencial:</strong> Se optar por Arte Própria, terá o custo fixo de <strong>R$ 8,00</strong>.
+                                <ul>
+                                    <li>Foram criadas tabelas de preços específicas para serem aplicadas nestes clientes: <strong>Padrão, 5% e 10%</strong>.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Níveis Superior e Elite:</strong> Caso não atinjam as quantidades necessárias após o período de teste de 90 dias, passarão a ter a cobrança de <strong>R$ 8,00</strong>. <em>(O acompanhamento e sinalização para o Cadastro incluir esses valores partirá do Marketing)</em>.</li>
+                            <li><strong>Tabelas Negociadas (Atenção):</strong> Caso o cliente tenha tabela negociada em algum produto, o valor de R$ 8,00 terá que ser calculado e embutido para inclusão dos valores.</li>
+                            <li><strong>Tabelas Base:</strong> Sempre que o cliente tiver tabela negociada, consulte se se trata de alguma tabela Base. Se sim, retire a tabela negociada e inclua na base a tabela correta com o acréscimo devido.</li>
+                            <li><strong>Exceção:</strong> Se for preciso criar uma nova tabela base, por favor, acione a liderança.</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="script-container" id="ancora-roteiro">
-                    <div class="script-title">📋 Roteiro do Processo</div>
-                    <div class="caixa-manual" style="border-left-color: #3498db; background-color: #e8f4fd;"><strong>Vendedor:</strong> Consulta Siglas e preenche formulário Google.</div>
-                    <div class="caixa-manual" style="border-left-color: #f1c40f; background-color: #fff8e1;"><strong>Cadastro:</strong> Copia dados Planilha Registro, retira dados CRM, envia DocuSign e avisa Marcapropria@haytek.com.br.</div>
+                    <div class="script-title">📋 Roteiro do Processo da Marca Exclusiva</div>
+                    
+                    <div class="caixa-manual" style="border-left-color: #3498db; background-color: #e8f4fd;">
+                        <h3 style="color: #2980b9;">🧑‍💼 Vendedor</h3>
+                        <ul class="lista-roteiro">
+                            <li>Consulta a planilha: <strong>Consulta Marcação Sigla Marca Exclusiva</strong>.</li>
+                            <li>Coloca os dados do cliente no formulário: <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0t8YnLxsHFEhcmNfIkniu2m3PYKId6G0YXLMM5t92amUqcA/viewform" target="_blank">Acessar Formulário</a>.</li>
+                        </ul>
+                    </div>
+
+                    <div class="caixa-manual" style="border-left-color: #f1c40f; background-color: #fff8e1;">
+                        <h3 style="color: #d35400;">💻 Cadastro</h3>
+                        <ul class="lista-roteiro">
+                            <li>Copia os dados da planilha <a href="https://docs.google.com/spreadsheets/d/1i-ddztf-rOCjfvXKhAbpvFJlvUirQT6AqDAiu7UVw54/edit?usp=sharing" target="_blank">Cadastro no Programa de Marca Exclusiva (Respostas)</a> para a planilha <a href="https://docs.google.com/spreadsheets/d/181_jPm2HC_HlgfNZdilQ8xFjZHry2u7B25ls_GE2s0w/edit?usp=sharing" target="_blank">Registro Marca Exclusiva</a>.</li>
+                            <li>Os dados cadastrais do cliente retire do CRM.</li>
+                            <li>Confirme se o código é master.</li>
+                            <li>Se o código for rede, confirme se deve bloquear as siglas para todos os estados. 
+                                <ul>
+                                    <li><strong>Se for bloquear para todos os estados:</strong><br>
+                                    Na planilha de Registro, aba "KA", coloque o código.<br>
+                                    Na planilha Consulta Marcação Sigla Marca Exclusiva, aba "Bloqueadas(oculta)", coloque as siglas.</li>
+                                </ul>
+                            </li>
+                            <li>Envie o contrato para o cliente e vendedor via Docusign.</li>
+                            <li>Enviar e-mail com Script constante em: <em>Contrato Enviado</em>.
+                                <ul>
+                                    <li><strong>Título:</strong> Marca Exclusiva - [Código do cliente]</li>
+                                    <li><strong>Destinatários:</strong> Quem enviou a solicitação; cadastro@haytek.com.br; marcaexclusiva@haytek.com.br</li>
+                                </ul>
+                            </li>
+                            <li>Confira junto ao Docusign diariamente a assinatura do contrato.</li>
+                            <li>Após todos os envolvidos assinarem o contrato encaminhar para o laboratório: marcapropria@haytek.com.br. 
+                                <ul>
+                                    <li><strong>Script:</strong> <em>Contrato Assinado - Marca Exclusiva (Enviar ao Lab)</em></li>
+                                    <li><strong>Dica:</strong> Usar mesmo e-mail que informou o envio do contrato, mantendo todos que já constam em cópia e inclua o e-mail: marcapropria@haytek.com.br.</li>
+                                </ul>
+                            </li>
+                            <li>Na planilha de Registro coloque na coluna "Data da Reserva" a data que o contrato foi assinado.</li>
+                            <li>Ao enviar para o Lab, configure no CRM com as informações da Marca no código master e pode replicar para os filhos.</li>
+                        </ul>
+                    </div>
+
+                    <div class="caixa-manual" style="border-left-color: #9b59b6; background-color: #f5eef8;">
+                        <h3 style="color: #8e44ad;">🌟 Quando Nível Superior ou Elite</h3>
+                        <ul class="lista-roteiro">
+                            <li><strong>(Arte própria ou personalizada):</strong><br>
+                            Após o Laboratório dar ok na configuração da marca, encaminhar para o Marketing: <a href="mailto:marketing.ticket@haytek.com.br">marketing.ticket@haytek.com.br</a>.</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div id="ancora-scripts-marca">
-                    <div class="script-container"><div class="script-title">Contrato Enviado</div><div class="script-text" id="m1">Olá Person! Encaminhamos o contrato para assinatura. Por favor oriente o cliente a assinar e datar.</div><button class="btn-copiar" onclick="copiarTexto('m1')">Copiar Script</button></div>
+                <div class="script-container" id="ancora-regras">
+                    <div class="script-title">📖 Regras e Procedimentos Adicionais</div>
+                    
+                    <div class="caixa-manual">
+                        <strong>Siglas Indisponíveis para Uso:</strong><br>
+                        Enviar e-mail para o vendedor anexando a planilha de consulta das siglas para verificação das siglas disponíveis e reenviar (no próprio e-mail).
+                    </div>
+                    
+                    <div class="caixa-manual">
+                        <strong>Níveis que Precisam de Aprovação por E-mail:</strong><br>
+                        Superior e Elite (Aprovação via diretoria comercial ou gerente nacional).
+                    </div>
+
+                    <div class="caixa-manual">
+                        <strong>Entrada de Rede na Marca:</strong><br>
+                        O processo inicial é o mesmo de todos. Caso seja uma rede com mais de 30 códigos:
+                        <ul class="lista-roteiro">
+                            <li>Envie para o Lab para o cadastro do código principal.</li>
+                            <li>Os demais códigos: gere relatórios com todos os códigos e abra ticket para que a equipe da Monique inclua de forma massiva internamente.</li>
+                        </ul>
+                    </div>
+
+                    <div class="caixa-manual">
+                        <strong>Alteração ou Inclusão:</strong><br>
+                        A alteração ou inclusão <strong>só exige reenvio de contrato</strong> caso o cliente esteja migrando para os novos perfis de níveis da marca.<br>
+                        <strong>Caso contrário:</strong> Após o vendedor colocar no formulário da marca, incluímos as alterações na planilha de registro e encaminhamos para o Lab.
+                    </div>
+
+                    <div class="caixa-manual">
+                        <strong>Quando Enviar para o Lab:</strong><br>
+                        Apenas em alterações das siglas, nome da marca, certificado ou código master cadastrado na marca. <em>(Alteração apenas de nível não é necessário incluir o laboratório)</em>.
+                    </div>
+
+                    <div class="caixa-manual">
+                        <strong>Certificado Provisório:</strong><br>
+                        Faz-se necessário caso o cliente ainda não tenha a marca registrada. Caso contrário, mantém o cartão já utilizado.
+                    </div>
+
+                    <div class="caixa-manual">
+                        <strong>Tratativa em Erro no Envio dos Certificados:</strong><br>
+                        <ul class="lista-roteiro">
+                            <li><strong>1º</strong> Solicite número de um dos pedidos com erro.</li>
+                            <li><strong>2º</strong> Consulte a data que o cliente entrou na marca e a data do pedido.</li>
+                            <li><strong>3º</strong> Consulte se o cliente tem marca no produto do certificado.</li>
+                            <li><strong>4º</strong> Lentes Transitions não têm marca exclusiva.</li>
+                            <li><strong>5º</strong> Consulte a marca cadastrada pelo laboratório no Painel Logística.</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><em>Se todas as etapas acima estão de acordo:</em> Envie para o laboratório para análise e reenvio do certificado correto.</p>
+                        <p><em>Atenção:</em> Se o pedido foi colocado <strong>antes</strong> da configuração da marca em sistema, o cliente receberá certificado Haytek (mesmo o faturamento sendo posterior à inclusão do pedido).</p>
+                        <p><strong>Regra de Ouro:</strong> Não enviamos certificados Haytek para clientes com marca exclusiva. Casos excepcionais devem acionar a liderança.</p>
+                    </div>
                 </div>
+
+                <h2 id="ancora-scripts-marca" class="subtitulo-destaque">
+                    📧 Scripts de E-mail da Marca Exclusiva
+                </h2>
+
+                <div class="script-container"><div class="script-title">Contrato Enviado</div><div class="script-text" id="marca1">Olá Person, bom dia ou boa tarde!
+
+Encaminhamos o contrato para assinatura.
+Solicitamos, por gentileza, que assine e oriente o cliente a assinar e datar o documento.
+Assim que o contrato estiver devidamente assinado, poderemos dar continuidade ao processo junto ao laboratório.
+Ficamos à disposição para quaisquer dúvidas.
+Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('marca1')">Copiar Script</button></div>
+
+                <div class="script-container"><div class="script-title">Contrato Assinado - Marca Exclusiva (Enviar ao Lab)</div><div class="script-text" id="marca2">Olá Person, bom dia ou boa tarde!
+
+Solicito, por gentileza, a continuidade no processo conforme discriminado na planilha.
+
+Fico à disposição para qualquer informação adicional.
+
+Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('marca2')">Copiar Script</button></div>
+
+                <div class="script-container"><div class="script-title">Marcação Repetida</div><div class="script-text" id="marca3">Olá Person, bom dia ou boa tarde!
+
+Verificamos que a marcação do [Produto - Sigla] enviada não está disponível no momento.
+Pedimos, por gentileza, que acesse o link Consulta Marcação Sigla Marca Exclusiva da marca para verificar as opções atualizadas e nos envie uma nova seleção.
+Aguardamos essa correção para darmos seguimento ao processo no programa Marca Exclusiva.
+Ficamos à disposição.
+Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('marca3')">Copiar Script</button></div>
+
+                <div class="script-container"><div class="script-title">Marca Exclusiva - Incluir Código de Loja</div><div class="script-text" id="marca4">Olá Person, bom dia ou boa tarde!
+Por favor incluir o novo código [código loja] na lista do master [código Master].
+Segue dados para cadastro da nova loja:
+Razão Social:
+Nome Fantasia:
+Endereço Fiscal:
+CEP: 
+Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('marca4')">Copiar Script</button></div>
+
+                <div class="script-container"><div class="script-title">Inclusão / Alteração de Novo Produto na Marca</div><div class="script-text" id="marca5">Olá Person, bom dia ou boa tarde!
+
+O cliente solicitou a inclusão/alteração do [Produto], conforme já discriminado na planilha. Gentileza providenciar, por favor.</div><button class="btn-copiar" onclick="copiarTexto('marca5')">Copiar Script</button></div>
+
+                <div class="script-container"><div class="script-title">Até 20 Dias do Contrato Enviado e Não Assinado</div><div class="script-text" id="marca6">Boa tarde, Person.
+Verificamos que o contrato ainda não foi assinado pelo cliente, o que impede o andamento do processo junto ao laboratório.
+O documento foi reenviado. Pedimos, por gentileza, que sinalize ao cliente a necessidade de assinatura para darmos continuidade.
+Ficamos à disposição para qualquer apoio necessário.
+Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('marca6')">Copiar Script</button></div>
+
+                <div class="script-container"><div class="script-title">A Partir de 30 Dias do Envio do Contrato</div><div class="script-text" id="marca7">Boa tarde, Person. 
+Tudo bem?
+Verificamos que o cliente ainda não assinou o contrato. Realizamos o reenvio do documento, caso ainda haja interesse em prosseguir.
+Por gentileza, caso contrário, solicitamos que nos sinalize para que possamos liberar as marcações correspondentes.
+Ficamos à disposição.
+Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('marca7')">Copiar Script</button></div>
+
+                <div class="script-container"><div class="script-title">A Partir de 40 Dias do Envio do Contrato</div><div class="script-text" id="marca8">Boa tarde, Person. 
+Informamos que, devido à ausência de assinatura do contrato, o cliente está sendo retirado do programa.
+Caso haja interesse em retomar o processo futuramente, será necessário realizar um novo envio dos dados por meio do link da marca.
+Estamos à disposição para qualquer esclarecimento.
+Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('marca8')">Copiar Script</button></div>
             </div>
 
+            <!-- ========================================== -->
+            <!-- PÁGINA 5: AVISOS E LINKS ÚTEIS -->
+            <!-- ========================================== -->
             <div id="pagina-avisos" class="pagina">
                 <h2 class="titulo-pagina">Mural de Avisos & Links Úteis</h2>
+                <p class="descricao titulo-pagina">Acesso rápido a todas as ferramentas, planilhas e documentos importantes do setor.</p>
+
                 <div class="script-container">
+                    <div class="script-title" style="margin-bottom: 20px;">Sistemas Haytek (Acesso Diário)</div>
                     <ul class="lista-links">
-                        <li><a href="https://haytek8.myfreshworks.com/crm/sales/analytics" target="_blank">💻 CRM Freshworks</a></li>
-                        <li><a href="https://haytek.com.br/admin/dashboard" target="_blank">💻 Site Haytek Admin</a></li>
+                        <li><a href="https://haytek.com.br/admin/dashboard" target="_blank">💻 Site Haytek</a></li>
+                        <li><a href="https://haytek8.myfreshworks.com/crm/sales/analytics" target="_blank">💻 CRM</a></li>
+                        <li><a href="https://vendas.haytek.com.br/dashboard" target="_blank">💻 Vendas</a></li>
+                        <li><a href="https://protheusweb.haytek.com.br/webapp/" target="_blank">💻 Protheus</a></li>
+                        <li><a href="https://painel.lenteshaytek.com.br/home" target="_blank">💻 Painel Haytek</a></li>
+                        <li><a href="https://painel.lenteshaytek.com.br/v2/laboratory/own-brand" target="_blank">💻 Painel Logística</a></li>
+                        <li><a href="https://haytek.com.br/cadastro/index.html" target="_blank">💻 Cadastro Rápido</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSe0t8YnLxsHFEhcmNfIkniu2m3PYKId6G0YXLMM5t92amUqcA/viewform" target="_blank">📝 Formulário Marca Exclusiva</a></li>
                     </ul>
                 </div>
+
+                <div class="script-container">
+                    <div class="script-title" style="margin-bottom: 20px;">Consultas Externas (Acesso Diário)</div>
+                    <ul class="lista-links">
+                        <li><a href="http://www.sintegra.gov.br/" target="_blank">🔎 Consulta Sintegra</a></li>
+                        <li><a href="https://solucoes.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp" target="_blank">🔎 Consulta CNPJ</a></li>
+                        <li><a href="https://www8.receita.fazenda.gov.br/simplesnacional/aplicacoes.aspx?id=21" target="_blank">🔎 Simples Nacional</a></li>
+                        <li><a href="https://www.ibge.gov.br/explica/codigos-dos-municipios.php" target="_blank">🔎 Código do Município (IBGE)</a></li>
+                        <li><a href="https://www.correios.com.br/" target="_blank">🔎 Correios</a></li>
+                        <li><a href="https://www4.suframa.gov.br/cadsuf/#/menu-externo" target="_blank">🔎 Suframa</a></li>
+                        <li><a href="https://www.serasaexperian.com.br/" target="_blank">🔎 Serasa</a></li>
+                    </ul>
+                </div>
+
+                <div class="script-container">
+                    <div class="script-title" style="margin-bottom: 20px;">Planilhas de Preços e Valores</div>
+                    <ul class="lista-links">
+                        <li><a href="https://docs.google.com/spreadsheets/d/1TDDPXrqSSjnzdMg5jETKRRwAM8GWGAULHxMPYsr2pNA/edit?usp=sharing" target="_blank">📄 Checagem de Valores Lab</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1AVnnhGSNDwHvACldypr-cU2woJFlL63j/edit?usp=sharing&ouid=100815151660367278260&rtpof=true&sd=true" target="_blank">📄 Tabela de Preços - Atualizada</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1UUYz-fwdejnjddMZ9-Bdhr6JmhkJbrKnlMZO0WlAoiE/edit?usp=sharing" target="_blank">📄 Preços Tabelas Padrão</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1IvoYwQtDdXddvGcSV08-4ZOH2UPRFptiPp-dRcH3H_s/edit?usp=sharing" target="_blank">📄 PREÇOS TABELAS PADRÃO KATIA</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/14MXMxUOO-GwFcFdFkFTXM7YPNcy4moIk/edit?usp=sharing&ouid=100815151660367278260&rtpof=true&sd=true" target="_blank">📄 Tabela de Preços LAB (Atualizada Modular)</a></li>
+                    </ul>
+                </div>
+
+                <div class="script-container">
+                    <div class="script-title" style="margin-bottom: 20px;">Marca Exclusiva & CRM</div>
+                    <ul class="lista-links">
+                        <li><a href="https://docs.google.com/spreadsheets/d/1evwP3Zzm-yG0w5ChhRbkAX7JP7HrosYAYfT6pKy8YmQ/edit?usp=sharing" target="_blank">📌 Consulta Marcação Sigla Marca Exclusiva</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/181_jPm2HC_HlgfNZdilQ8xFjZHry2u7B25ls_GE2s0w/edit?usp=sharing" target="_blank">📌 Registro Marca Exclusiva</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1i-ddztf-rOCjfvXKhAbpvFJlvUirQT6AqDAiu7UVw54/edit?usp=sharing" target="_blank">📌 Cadastro no Programa de Marca Exclusiva (Respostas)</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1G3GuwH-oaXcjmHIbSXTJFsLD24P4ee2TMZmt3i9pFeY/edit?usp=sharing" target="_blank">📌 Tabelas de Preço X CRM ID</a></li>
+                        <li><a href="https://account.docusign.com/oauth/auth?response_type=code&scope=all&client_id=e63ccab8-ed38-489b-93e5-5607430af035&redirect_uri=https%3A%2F%2Fapps.docusign.com%2Fauthenticate&state=%7B%22widgetId%22%3A%22%40ds%2Fsend%22%2C%22xsrfToken%22%3A%22PUdUa3QfvEaWHgoIEGheirqWuBRqmiuFz6H80o%2B8%2FVOvI3YZbaYG9mtG5CxRR59mGIJkf5%2BQHm2cJr3a7z6LK8halhvz8rN0yn5UA6SPG37vYR5bqcYI55imszLCHbhyXI6cnGQbtPlLNS8MHoqH9HO%2Fj7Q84Fw9cv6zV36dOlY%3D%22%2C%22redirectUri%22%3A%22%2Fsend%2Fauthentication%3Fback%3D%252Fhome%22%2C%22authTxnId%22%3A%22f0fad1f9-aff4-40c4-842e-c282b4113466%22%7D" target="_blank">📌 DocuSign (Assinatura de Contratos)</a></li>
+                    </ul>
+                </div>
+
+                <div class="script-container">
+                    <div class="script-title" style="margin-bottom: 20px;">Controle de Clientes e Serviços</div>
+                    <ul class="lista-links">
+                        <li><a href="https://docs.google.com/spreadsheets/d/1PcKJjZq1uT7fIUiZUZQkYSTAdjUHWKq0fuUmGOS72to/edit?usp=sharing" target="_blank">⚙️ Desconto na Coloração</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1YJ-hZ26XmeqXrzMvcvjwLmnuoEkIYWFVTHHU96QbWkU/edit?usp=sharing" target="_blank">⚙️ Clientes Menos 1500 (Rodrigo / Tim / Luciano)</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1S3IAOwp2FJUgqKxir65HfQQoFXAOqQ6zukN5SDmR6I0/edit?usp=sharing" target="_blank">⚙️ Códigos - Alterado Preços de Estoque</a></li>
+                    </ul>
+                </div>
+
+                <div class="script-container">
+                    <div class="script-title" style="margin-bottom: 20px;">Campanhas e Cashback</div>
+                    <ul class="lista-links">
+                        <li><a href="https://docs.google.com/spreadsheets/d/1Gjlj-dwOKwKRvsCv9PkkJm-COHbuHt_8ODHNzBuQv5c/edit?usp=sharing" target="_blank">🎁 Cashback - Campanhas</a></li>
+                    </ul>
+                </div>
+
             </div>
 
-        </div> 
-    </div>
-
-    <script>
+        </div> </div> <script>
         var abaAtiva = 'pagina-scripts';
 
         window.onload = function() {
@@ -850,12 +1165,25 @@ Gentileza verificar e nos retornar com as informações solicitadas.</div><butto
         function mudarPagina(idPaginaDesejada) {
             abaAtiva = idPaginaDesejada; 
             document.getElementById('campoPesquisa').value = ''; 
+            
+            // Oculta todas as páginas e mostra apenas a selecionada
             var todasAsPaginas = document.getElementsByClassName('pagina');
             for (var i = 0; i < todasAsPaginas.length; i++) {
                 todasAsPaginas[i].style.display = 'none';
             }
             document.getElementById(idPaginaDesejada).style.display = 'block';
 
+            // Garante que os elementos de script e títulos estejam visíveis caso tenham sido filtrados antes
+            var todosScripts = document.getElementsByClassName('script-container');
+            for(var i = 0; i < todosScripts.length; i++) {
+                todosScripts[i].style.display = 'block';
+            }
+            var titulos = document.getElementsByClassName('titulo-pagina');
+            for(var i = 0; i < titulos.length; i++) {
+                titulos[i].style.display = 'block';
+            }
+
+            // Lógica do Submenu Lateral
             var submenus = document.getElementsByClassName('submenu');
             for(var j = 0; j < submenus.length; j++) {
                 submenus[j].style.display = 'none';
@@ -869,11 +1197,29 @@ Gentileza verificar e nos retornar com as informações solicitadas.</div><butto
             var termo = document.getElementById('campoPesquisa').value.toLowerCase();
             var todasAsPaginas = document.getElementsByClassName('pagina');
             var todosScripts = document.getElementsByClassName('script-container');
-            if (termo === "") { mudarPagina(abaAtiva); return; }
-            for (var i = 0; i < todasAsPaginas.length; i++) { todasAsPaginas[i].style.display = 'block'; }
+            var titulos = document.getElementsByClassName('titulo-pagina');
+
+            if (termo === "") {
+                mudarPagina(abaAtiva);
+                return;
+            }
+
+            for (var i = 0; i < titulos.length; i++) {
+                titulos[i].style.display = 'none';
+            }
+
+            for (var i = 0; i < todasAsPaginas.length; i++) {
+                todasAsPaginas[i].style.display = 'block';
+            }
+
             for (var i = 0; i < todosScripts.length; i++) {
                 var textoDoScript = todosScripts[i].innerText.toLowerCase();
-                todosScripts[i].style.display = textoDoScript.includes(termo) ? 'block' : 'none';
+                
+                if (textoDoScript.includes(termo)) {
+                    todosScripts[i].style.display = 'block';
+                } else {
+                    todosScripts[i].style.display = 'none';
+                }
             }
         }
     </script>
