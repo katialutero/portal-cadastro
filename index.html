@@ -19,7 +19,7 @@
             min-height: 100vh; 
         }
         
-        /* --- MENU LATERAL FIXO --- */
+        /* --- MENU LATERAL (AGORA FIXO) --- */
         .menu-lateral {
             background-color: #2980b9; 
             width: 260px; 
@@ -27,13 +27,21 @@
             box-sizing: border-box;
             flex-shrink: 0; 
             box-shadow: 2px 0 5px rgba(0,0,0,0.1); 
+            
+            /* COMANDOS PARA FIXAR O MENU */
             position: sticky;
             top: 0;
-            height: 100vh;
-            overflow-y: auto; 
+            height: 100vh; /* Ocupa exatamente 100% da altura da tela */
+            overflow-y: auto; /* Cria barra de rolagem no menu caso tenha muitos botões */
         }
-        .menu-lateral::-webkit-scrollbar { width: 6px; }
-        .menu-lateral::-webkit-scrollbar-thumb { background-color: #1f618d; border-radius: 10px; }
+        /* Personalizando a barra de rolagem do menu lateral para ficar elegante */
+        .menu-lateral::-webkit-scrollbar {
+            width: 6px;
+        }
+        .menu-lateral::-webkit-scrollbar-thumb {
+            background-color: #1f618d; 
+            border-radius: 10px;
+        }
 
         .logo-menu {
             color: white;
@@ -60,7 +68,10 @@
             text-align: left; 
             display: block;
         }
-        .btn-menu:hover { background-color: #1f618d; border-left: 5px solid #ffffff; }
+        .btn-menu:hover { 
+            background-color: #1f618d; 
+            border-left: 5px solid #ffffff; 
+        }
         
         /* --- SUBMENU LATERAL --- */
         .submenu {
@@ -79,7 +90,11 @@
             border-left: 5px solid transparent;
             transition: 0.3s;
         }
-        .submenu a:hover { color: #fff; background-color: #154360; border-left: 5px solid #3498db; }
+        .submenu a:hover {
+            color: #fff;
+            background-color: #154360;
+            border-left: 5px solid #3498db;
+        }
 
         /* --- ÁREA DIREITA --- */
         .area-direita {
@@ -276,12 +291,19 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 padding: 10px;
+                /* Reseta o menu fixo no celular para não quebrar a tela */
                 position: static;
                 height: auto;
                 overflow-y: visible;
             }
             .logo-menu { width: 100%; border: none; margin-bottom: 10px; }
-            .btn-menu { width: auto; text-align: center; margin: 5px; border-radius: 5px; border-left: none; }
+            .btn-menu {
+                width: auto;
+                text-align: center;
+                margin: 5px;
+                border-radius: 5px;
+                border-left: none;
+            }
             .btn-menu:hover { border-left: none; }
             .area-direita { width: 100%; }
             .logo-canto-direito { display: none; }
@@ -306,6 +328,7 @@
         </div>
         
         <button class="btn-menu" onclick="mudarPagina('pagina-redes')">Redes</button>
+
         <button class="btn-menu" onclick="mudarPagina('pagina-avisos')">Mural de Avisos</button>
     </div>
 
@@ -318,16 +341,12 @@
 
         <div class="conteudo-principal">
 
-            <!-- ========================================== -->
-            <!-- PÁGINA REDES -->
-            <!-- ========================================== -->
             <div id="pagina-redes" class="pagina">
                 <h1 class="titulo-pagina">Redes - Detalhes e Regras</h1>
                 <p class="descricao titulo-pagina">Consulta de especificações técnicas e regras comerciais por rede.</p>
 
-                <!-- AIRTON ÓTICA -->
                 <div class="card-rede">
-                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Airton Ótica <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: MA0008</span></h2>
+                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Airton Otica <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Código Principal: MA0008</span></h2>
                     <table class="tabela-niveis">
                         <tr>
                             <td><strong>Key Account:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
@@ -366,17 +385,16 @@
                     </div>
                 </div>
 
-                <!-- ÓTICAS DINIZ -->
                 <div class="card-rede">
                     <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Óticas Diniz <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: Não</span></h2>
                     <table class="tabela-niveis">
                         <tr>
                             <td><strong>Key Account:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
-                            <td><strong>Marca Exclusiva:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
+                            <td><strong>Marca Exclusiva:</strong></td> <td><span class="status-badge status-sim">Sim (PR0153)</span></td>
                         </tr>
                         <tr>
-                            <td><strong>25 Contas:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
-                            <td><strong>Emails compartilhados:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
+                            <td><strong>25 Contas:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
+                            <td><strong>Emails compartilhados:</strong></td> <td><span class="status-badge status-sim">Sim (nf_lentes@oticasdiniz.com.br)</span></td>
                         </tr>
                         <tr>
                             <td><strong>Master separado por estado:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
@@ -407,7 +425,6 @@
                     </div>
                 </div>
 
-                <!-- ÓTICAS CAROL -->
                 <div class="card-rede">
                     <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Óticas Carol <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: Não</span></h2>
                     <table class="tabela-niveis">
@@ -448,13 +465,12 @@
                     </div>
                 </div>
 
-                <!-- CHILLI BEANS -->
                 <div class="card-rede">
                     <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Chilli Beans <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: Não</span></h2>
                     <table class="tabela-niveis">
                         <tr>
                             <td><strong>Key Account:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
-                            <td><strong>Marca Exclusiva:</strong></td> <td><span class="status-badge status-sim">Sim</span> <small>(MG2116)</small></td>
+                            <td><strong>Marca Exclusiva:</strong></td> <td><span class="status-badge status-sim">Sim (MG2116)</span></td>
                         </tr>
                         <tr>
                             <td><strong>25 Contas:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
@@ -489,13 +505,12 @@
                     </div>
                 </div>
 
-                <!-- OPTICALIA -->
                 <div class="card-rede">
                     <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Opticalia <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: Não</span></h2>
                     <table class="tabela-niveis">
                         <tr>
                             <td><strong>Key Account:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
-                            <td><strong>Marca Exclusiva:</strong></td> <td><span class="status-badge status-sim">Sim</span> <small>(SP3357)</small></td>
+                            <td><strong>Marca Exclusiva:</strong></td> <td><span class="status-badge status-sim">Sim (SP3357)</span></td>
                         </tr>
                         <tr>
                             <td><strong>25 Contas:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
@@ -530,7 +545,6 @@
                     </div>
                 </div>
 
-                <!-- ÓTICAS DO POVO -->
                 <div class="card-rede">
                     <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Óticas do Povo <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: RJ1686</span></h2>
                     <table class="tabela-niveis">
@@ -571,7 +585,6 @@
                     </div>
                 </div>
 
-                <!-- ZEREZES -->
                 <div class="card-rede">
                     <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Zerezes <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: RJ1114</span></h2>
                     <table class="tabela-niveis">
@@ -589,10 +602,10 @@
                         </tr>
                         <tr>
                             <td><strong>Limite de crédito pré-definido:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
-                            <td><strong>Prazo pré-definido:</strong></td> <td>15/30,60,90,120</td>
+                            <td><strong>Prazo pré-definido:</strong></td> <td>30/30,60,90,120</td>
                         </tr>
                         <tr>
-                            <td><strong>Campanha de Cupons:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
+                            <td><strong>Campanha de Cupons:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
                             <td></td><td></td>
                         </tr>
                     </table>
@@ -612,7 +625,6 @@
                     </div>
                 </div>
 
-                <!-- GRUPO LENS -->
                 <div class="card-rede">
                     <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Grupo Lens <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: PR0033/PR0034/PR0035</span></h2>
                     <table class="tabela-niveis">
@@ -653,7 +665,6 @@
                     </div>
                 </div>
 
-                <!-- RUBI -->
                 <div class="card-rede">
                     <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Rubi <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: SP1207</span></h2>
                     <table class="tabela-niveis">
@@ -693,11 +704,49 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="card-rede">
+                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Outlet dos Óculos <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: Não</span></h2>
+                    <table class="tabela-niveis">
+                        <tr>
+                            <td><strong>Key Account:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
+                            <td><strong>Marca Exclusiva:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>25 Contas:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
+                            <td><strong>Emails compartilhados entre masters:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Master separado por estado:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
+                            <td><strong>Grupo comercial:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Limite de crédito pré-definido:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
+                            <td><strong>Prazo pré-definido:</strong></td> <td>15/30,60,90</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Campanha de Cupons:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
+                            <td></td><td></td>
+                        </tr>
+                    </table>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 20px;">
+                        <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong>
+                            Base: OUTLET DOS ÓCULOS<br>Negociada: Não
+                        </div>
+                        <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong>
+                            Base: OUTLET DOS ÓCULOS<br>Negociada: Não
+                        </div>
+                        <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong>
+                            Base: OUTLET DOS ÓCULOS
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <!-- ========================================== -->
-            <!-- PÁGINA 1: SCRIPTS GERAIS -->
-            <!-- ========================================== -->
             <div id="pagina-scripts" class="pagina pagina-ativa">
                 <h1 class="titulo-pagina">Scripts para Respostas de E-mail</h1>
                 <p class="descricao titulo-pagina">Este documento contém scripts padronizados para serem utilizados em respostas a solicitações via e-mail.</p>
@@ -763,9 +812,6 @@ email
 Gentileza verificar e nos retornar com as informações solicitadas.</div><button class="btn-copiar" onclick="copiarTexto('script10')">Copiar Script</button></div>
             </div>
 
-            <!-- ========================================== -->
-            <!-- PÁGINA 2: BOAS-VINDAS -->
-            <!-- ========================================== -->
             <div id="pagina-boas-vindas" class="pagina">
                 <h1 class="titulo-pagina">Boas-Vindas</h1>
                 
@@ -793,9 +839,6 @@ Estamos felizes com seu cadastro e queremos garantir que tudo esteja certinho pa
 (21) 4040-4840 ou (21) 4040-2412.</div><button class="btn-copiar" onclick="copiarTexto('contatos')">Copiar Contatos</button></div>
             </div>
 
-            <!-- ========================================== -->
-            <!-- PÁGINA 3: ALTERAÇÕES DE PREÇOS -->
-            <!-- ========================================== -->
             <div id="pagina-alteracoes-precos" class="pagina">
                 <h1 class="titulo-pagina">Alterações de Preços</h1>
                 <p class="descricao titulo-pagina">Informações e scripts para tratativas comerciais e ajustes de valores.</p>
@@ -835,9 +878,6 @@ Podemos aplicar os valores?
 Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('script6')">Copiar Script</button></div>
             </div>
 
-            <!-- ========================================== -->
-            <!-- PÁGINA 4: MARCA EXCLUSIVA -->
-            <!-- ========================================== -->
             <div id="pagina-marca" class="pagina">
                 <h1 class="titulo-pagina">Marca Exclusiva</h1>
                 <p class="descricao titulo-pagina">Scripts e Procedimentos de apoio para o programa da Marca Exclusiva.</p>
@@ -1064,9 +1104,6 @@ Estamos à disposição para qualquer esclarecimento.
 Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('marca8')">Copiar Script</button></div>
             </div>
 
-            <!-- ========================================== -->
-            <!-- PÁGINA 5: AVISOS E LINKS ÚTEIS -->
-            <!-- ========================================== -->
             <div id="pagina-avisos" class="pagina">
                 <h2 class="titulo-pagina">Mural de Avisos & Links Úteis</h2>
                 <p class="descricao titulo-pagina">Acesso rápido a todas as ferramentas, planilhas e documentos importantes do setor.</p>
