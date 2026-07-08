@@ -1,4 +1,45 @@
-<!DOCTYPE html>
+
+
+                <div class="script-container">
+                    <div class="script-title" style="margin-bottom: 20px;">Campanhas e Cashback</div>
+                    <ul class="lista-links">
+                        <li><a href="https://docs.google.com/spreadsheets/d/1Gjlj-dwOKwKRvsCv9PkkJm-COHbuHt_8ODHNzBuQv5c/edit?usp=sharing" target="_blank">🎁 Cashback - Campanhas</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div> </div> <script>
+        var abaAtiva = 'pagina-scripts';
+
+        window.onload = function() {
+            var dolarSalvo = localStorage.getItem('dolarHaytek');
+            if(dolarSalvo) {
+                document.getElementById('valor-dolar').innerText = dolarSalvo;
+            }
+        };
+
+        function salvarDolar() {
+            var novoValor = document.getElementById('valor-dolar').innerText;
+            localStorage.setItem('dolarHaytek', novoValor);
+        }
+
+        function copiarTexto(idElemento) {
+            var texto = document.getElementById(idElemento).innerText;
+            navigator.clipboard.writeText(texto).then(function() {
+                alert("Script copiado com sucesso!");
+            }).catch(function(err) {
+                alert("Erro ao copiar o texto: " + err);
+            });
+        }
+
+        function mudarPagina(idPaginaDesejada) {
+            abaAtiva = idPaginaDesejada; 
+            document.getElementById('campoPesquisa').value = ''; 
+            
+            // Oculta todas as páginas e mostra apenas a selecionada
+            var todasAsPaginas = document.getElementsByClassName('pagina');
+            for (var i = 0; i < todasAsPaginas.length; i++) {<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -1166,47 +1207,6 @@ Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('marca8')">
                         <li><a href="https://docs.google.com/spreadsheets/d/1S3IAOwp2FJUgqKxir65HfQQoFXAOqQ6zukN5SDmR6I0/edit?usp=sharing" target="_blank">⚙️ Códigos - Alterado Preços de Estoque</a></li>
                     </ul>
                 </div>
-
-                <div class="script-container">
-                    <div class="script-title" style="margin-bottom: 20px;">Campanhas e Cashback</div>
-                    <ul class="lista-links">
-                        <li><a href="https://docs.google.com/spreadsheets/d/1Gjlj-dwOKwKRvsCv9PkkJm-COHbuHt_8ODHNzBuQv5c/edit?usp=sharing" target="_blank">🎁 Cashback - Campanhas</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-        </div> </div> <script>
-        var abaAtiva = 'pagina-scripts';
-
-        window.onload = function() {
-            var dolarSalvo = localStorage.getItem('dolarHaytek');
-            if(dolarSalvo) {
-                document.getElementById('valor-dolar').innerText = dolarSalvo;
-            }
-        };
-
-        function salvarDolar() {
-            var novoValor = document.getElementById('valor-dolar').innerText;
-            localStorage.setItem('dolarHaytek', novoValor);
-        }
-
-        function copiarTexto(idElemento) {
-            var texto = document.getElementById(idElemento).innerText;
-            navigator.clipboard.writeText(texto).then(function() {
-                alert("Script copiado com sucesso!");
-            }).catch(function(err) {
-                alert("Erro ao copiar o texto: " + err);
-            });
-        }
-
-        function mudarPagina(idPaginaDesejada) {
-            abaAtiva = idPaginaDesejada; 
-            document.getElementById('campoPesquisa').value = ''; 
-            
-            // Oculta todas as páginas e mostra apenas a selecionada
-            var todasAsPaginas = document.getElementsByClassName('pagina');
-            for (var i = 0; i < todasAsPaginas.length; i++) {
                 todasAsPaginas[i].style.display = 'none';
             }
             document.getElementById(idPaginaDesejada).style.display = 'block';
