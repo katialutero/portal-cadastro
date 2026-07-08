@@ -19,7 +19,7 @@
             min-height: 100vh; 
         }
         
-        /* --- MENU LATERAL (AGORA FIXO) --- */
+        /* --- MENU LATERAL FIXO --- */
         .menu-lateral {
             background-color: #2980b9; 
             width: 260px; 
@@ -27,8 +27,6 @@
             box-sizing: border-box;
             flex-shrink: 0; 
             box-shadow: 2px 0 5px rgba(0,0,0,0.1); 
-            
-            /* COMANDOS PARA FIXAR O MENU */
             position: sticky;
             top: 0;
             height: 100vh; 
@@ -137,7 +135,7 @@
         /* --- ÁREA DE CONTEÚDO PRINCIPAL --- */
         .conteudo-principal { 
             padding: 30px; 
-            max-width: 900px; 
+            max-width: 1000px; 
             margin: 0 auto; 
             width: 100%;
             box-sizing: border-box;
@@ -165,6 +163,7 @@
             white-space: pre-wrap; 
             font-family: 'Verdana', sans-serif; 
             font-size: 14px;
+            line-height: 1.5;
         }
         .btn-copiar {
             background-color: #27ae60;
@@ -325,6 +324,7 @@
 </head>
 <body>
 
+    <!-- MENU LATERAL -->
     <div class="menu-lateral">
         <div class="logo-menu">Portal Cadastro</div>
         <button class="btn-menu" onclick="mudarPagina('pagina-scripts')">Scripts de E-mail</button>
@@ -345,8 +345,9 @@
 
     <div class="area-direita">
         
+        <!-- BARRA DE PESQUISA -->
         <div class="area-pesquisa">
-            <input type="text" id="campoPesquisa" class="input-pesquisa" placeholder="🔍 Pesquise por palavras (ex: senha, Carol, endereço, dólar...)" onkeyup="pesquisarScripts()">
+            <input type="text" id="campoPesquisa" class="input-pesquisa" placeholder="🔍 Pesquise por palavras na página atual..." onkeyup="pesquisarScripts()">
             <img src="Logo_Haytek_RGB.png" alt="Logo Haytek" class="logo-canto-direito">
         </div>
 
@@ -683,6 +684,47 @@
                         <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
                             <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong>
                             Base: LUXOTTICA
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÓTICAS DINIZ -->
+                <div class="card-rede">
+                    <h2 style="text-align: left; margin-top: 0; color: #2c3e50;">Óticas Diniz <span style="font-size: 0.6em; color: #7f8c8d; float: right;">Cód. Principal: Não</span></h2>
+                    <table class="tabela-niveis">
+                        <tr>
+                            <td><strong>Key Account:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
+                            <td><strong>Marca Exclusiva:</strong></td> <td><span class="status-badge status-sim">Sim</span> <br><span class="nota-tecnica">PR0153</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>25 Contas:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
+                            <td><strong>Emails compartilhados:</strong></td> <td><span class="status-badge status-sim">Sim</span> <br><span class="nota-tecnica">nf_lentes@oticasdiniz.com.br</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Master separado por estado:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
+                            <td><strong>Grupo comercial:</strong></td> <td><span class="status-badge status-sim">Sim</span> <br><span class="nota-tecnica">Observar Master</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Limite de crédito pré-definido:</strong></td> <td><span class="status-badge status-nao">Não</span></td>
+                            <td><strong>Prazo pré-definido:</strong></td> <td>F15/30,60,90 <br><span class="nota-tecnica">Não é massivo</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Campanha de Cupons:</strong></td> <td><span class="status-badge status-sim">Sim</span></td>
+                            <td></td><td></td>
+                        </tr>
+                    </table>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 20px;">
+                        <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Surfaçadas</strong>
+                            Base: DINIZ<br>Negociada: Não
+                        </div>
+                        <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Estoque</strong>
+                            Base: DINIZ <span class="nota-tecnica">Não é massivo</span><br>Negociada: Não
+                        </div>
+                        <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; border: 1px solid #d1d9e6;">
+                            <strong style="color: #2980b9; display: block; margin-bottom: 5px;">Preços Serviço</strong>
+                            Base: DINIZ <span class="nota-tecnica">Não é massivo</span>
                         </div>
                     </div>
                 </div>
@@ -1157,7 +1199,7 @@ Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('script6')"
                         </ul>
                         <p style="margin-top: 15px;"><em>Se todas as etapas acima estão de acordo:</em> Envie para o laboratório para análise e reenvio do certificado correto.</p>
                         <p><em>Atenção:</em> Se o pedido foi colocado <strong>antes</strong> da configuração da marca em sistema, o cliente receberá certificado Haytek (mesmo o faturamento sendo posterior à inclusão do pedido).</p>
-                        <p><strong>Regra de Ouro:</strong> Não enviamos certificates Haytek para clientes com marca exclusiva. Casos excepcionais devem acionar a liderança.</p>
+                        <p><strong>Regra de Ouro:</strong> Não enviamos certificados Haytek para clientes com marca exclusiva. Casos excepcionais devem acionar a liderança.</p>
                     </div>
                 </div>
 
@@ -1296,7 +1338,10 @@ Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('marca8')">
 
             </div>
 
-        </div> </div> <script>
+        </div> </div> 
+
+    <!-- JAVASCRIPT CORRIGIDO: BUSCA APENAS NA ABA ATIVA -->
+    <script>
         var abaAtiva = 'pagina-scripts';
 
         window.onload = function() {
@@ -1331,17 +1376,13 @@ Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('marca8')">
             }
             document.getElementById(idPaginaDesejada).style.display = 'block';
 
-            // Garante que os elementos de script e títulos estejam visíveis caso tenham sido filtrados antes
-            var todosScripts = document.getElementsByClassName('script-container');
-            for(var i = 0; i < todosScripts.length; i++) {
-                todosScripts[i].style.display = 'block';
-            }
-            var titulos = document.getElementsByClassName('titulo-pagina');
-            for(var i = 0; i < titulos.length; i++) {
-                titulos[i].style.display = 'block';
+            // Garante que TODOS os elementos pesquisáveis voltem a aparecer ao trocar de aba (reseta a pesquisa)
+            var todosItens = document.querySelectorAll('.script-container, .card-rede, .titulo-pagina');
+            for(var i = 0; i < todosItens.length; i++) {
+                todosItens[i].style.display = 'block';
             }
 
-            // Lógica do Submenu Lateral
+            // Lógica do Submenu Lateral da Marca Exclusiva
             var submenus = document.getElementsByClassName('submenu');
             for(var j = 0; j < submenus.length; j++) {
                 submenus[j].style.display = 'none';
@@ -1353,30 +1394,38 @@ Atenciosamente,</div><button class="btn-copiar" onclick="copiarTexto('marca8')">
 
         function pesquisarScripts() {
             var termo = document.getElementById('campoPesquisa').value.toLowerCase();
-            var todasAsPaginas = document.getElementsByClassName('pagina');
-            var todosScripts = document.getElementsByClassName('script-container');
-            var titulos = document.getElementsByClassName('titulo-pagina');
+            
+            // LÓGICA CORRIGIDA: Foca a pesquisa SOMENTE dentro da página que está ativa
+            var paginaAtual = document.getElementById(abaAtiva);
+            
+            // Busca apenas os títulos, scripts e cartões de redes DENTRO da página atual
+            var titulos = paginaAtual.getElementsByClassName('titulo-pagina');
+            var itensPesquisaveis = paginaAtual.querySelectorAll('.script-container, .card-rede');
 
             if (termo === "") {
-                mudarPagina(abaAtiva);
+                // Restaura os itens da página atual
+                for (var i = 0; i < titulos.length; i++) {
+                    titulos[i].style.display = 'block';
+                }
+                for (var i = 0; i < itensPesquisaveis.length; i++) {
+                    itensPesquisaveis[i].style.display = 'block';
+                }
                 return;
             }
 
+            // Oculta títulos para uma pesquisa mais limpa
             for (var i = 0; i < titulos.length; i++) {
                 titulos[i].style.display = 'none';
             }
 
-            for (var i = 0; i < todasAsPaginas.length; i++) {
-                todasAsPaginas[i].style.display = 'block';
-            }
-
-            for (var i = 0; i < todosScripts.length; i++) {
-                var textoDoScript = todosScripts[i].innerText.toLowerCase();
+            // Filtra os itens da aba atual
+            for (var i = 0; i < itensPesquisaveis.length; i++) {
+                var textoDoItem = itensPesquisaveis[i].innerText.toLowerCase();
                 
-                if (textoDoScript.includes(termo)) {
-                    todosScripts[i].style.display = 'block';
+                if (textoDoItem.includes(termo)) {
+                    itensPesquisaveis[i].style.display = 'block';
                 } else {
-                    todosScripts[i].style.display = 'none';
+                    itensPesquisaveis[i].style.display = 'none';
                 }
             }
         }
