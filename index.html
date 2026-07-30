@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -30,13 +30,97 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* --- Estilos para o Dark Mode --- */
+        body.dark-mode {
+            background-color: #0f172a;
+            color: #f1f5f9;
+        }
+        
+        /* Ajusta o fundo e a borda dos cards/containers principais */
+        body.dark-mode .bg-white { background-color: #1e293b; border-color: #334155; }
+        
+        /* Ajusta o fundo da página (ex: área externa e headers) */
+        body.dark-mode .bg-slate-50 { background-color: #0f172a; }
+        
+        /* Ajusta os textos que originalmente são escuros (#2c3e50, slate-800, text-gray-700) para cores claras */
+        body.dark-mode .text-slate-800, 
+        body.dark-mode .text-\[\#2c3e50\], 
+        body.dark-mode .text-gray-700, 
+        body.dark-mode .text-gray-800 { 
+            color: #e2e8f0; 
+        }
+        
+        /* Ajusta textos secundários para um cinza mais suave */
+        body.dark-mode .text-gray-500, 
+        body.dark-mode .text-gray-600 { 
+            color: #94a3b8; 
+        }
+        
+        /* Bordas mais suaves */
+        body.dark-mode .border-gray-200 { border-color: #334155; }
+        
+        /* Ajusta a barra de pesquisa */
+        body.dark-mode input#campoPesquisa { background-color: #1e293b; color: #f1f5f9; border: 1px solid #334155; }
+        body.dark-mode input#campoPesquisa::placeholder { color: #64748b; }
+        
+        /* Ajustes específicos para as Tabelas das Redes */
+        body.dark-mode table tr.bg-gray-50 { background-color: #1e293b; }
+        body.dark-mode table tr.bg-white { background-color: #0f172a; }
+        body.dark-mode table td { border-color: #334155; color: #e2e8f0; }
+        body.dark-mode .bg-gray-200 { background-color: #334155; color: #e2e8f0; border-color: #475569; } /* Tags Cinzas (Ex: MG2116) */
+        
+        /* Ajustes para os boxes cinzas dentro dos cards de redes (Preços Surfaçadas/Estoque) */
+        body.dark-mode .bg-slate-100 { background-color: #334155; border-color: #475569; color: #e2e8f0; }
+        
+        /* Ajusta os avisos coloridos (Boas Vindas, Marca Exclusiva, Backlog) */
+        body.dark-mode .bg-\[\#e8f4fd\], /* Azul */
+        body.dark-mode .bg-\[\#e8f5e9\], /* Verde */
+        body.dark-mode .bg-\[\#fff3cd\], /* Amarelo (Boas Vindas) */
+        body.dark-mode .bg-\[\#fdedec\], /* Vermelho */
+        body.dark-mode .bg-\[\#eafaf1\], /* Verde 2 */
+        body.dark-mode .bg-\[\#fff8e1\], /* Amarelo 2 */
+        body.dark-mode .bg-\[\#f5eef8\], /* Roxo */
+        body.dark-mode .bg-yellow-50,    /* Amarelo (Backlog) */
+        body.dark-mode .bg-gray-50       /* Cinza (Marca Exclusiva - Regras Adicionais) */
+        {
+            background-color: #1e293b;
+        }
+
+        /* Ajusta os links da Aba de Avisos para não ficarem brancos sobre fundo quase branco no dark mode */
+        body.dark-mode .script-container ul a {
+            background-color: #334155;
+            color: #e2e8f0;
+        }
+        body.dark-mode .script-container ul a:hover {
+            color: #ffffff;
+            /* O background do hover continua o definido no tailwind da tag HTML */
+        }
+        
+        /* Efeito de hover nos containers para dar profundidade no modo escuro */
+        body.dark-mode .script-container:hover, body.dark-mode .card-rede:hover { 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); 
+        }
+
+        /* Destaque da pesquisa (Highlight) */
+        .highlight {
+            background-color: #fef08a;
+            color: #854d0e;
+            padding: 0 2px;
+            border-radius: 2px;
+            font-weight: bold;
+        }
+        body.dark-mode .highlight {
+            background-color: #ca8a04;
+            color: #fefce8;
+        }
     </style>
 </head>
-<body class="flex flex-col md:flex-row min-h-screen bg-slate-50 text-slate-800 font-sans">
+<body class="flex flex-col md:flex-row min-h-screen bg-slate-50 text-slate-800 font-sans transition-colors duration-300">
 
     <aside class="menu-lateral w-full md:w-[260px] bg-[#2980b9] text-white flex-shrink-0 flex flex-col md:sticky md:top-0 md:h-screen overflow-y-auto shadow-lg z-20 transition-all duration-300">
-        <div class="p-6 border-b border-[#1f618d] mb-4">
-            <h1 class="text-2xl font-bold text-center tracking-wide text-white">Portal Cadastro</h1>
+        <div class="p-6 border-b border-[#1f618d] mb-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-wide text-white">Portal Cadastro</h1>
         </div>
         
         <nav class="flex flex-col px-3 pb-6 space-y-1">
@@ -60,20 +144,34 @@
             <button onclick="mudarPagina('pagina-redes')" class="text-left px-4 py-3 rounded-lg font-semibold transition-colors hover:bg-[#1f618d] hover:border-l-4 hover:border-white focus:outline-none focus:bg-[#1f618d] border-l-4 border-transparent">Redes</button>
             
             <button onclick="mudarPagina('pagina-avisos')" class="text-left px-4 py-3 rounded-lg font-semibold transition-colors hover:bg-[#1f618d] hover:border-l-4 hover:border-white focus:outline-none focus:bg-[#1f618d] border-l-4 border-transparent">Acessos Rápidos</button>
+
+            <!-- Nova Aba Backlog -->
+            <button onclick="mudarPagina('pagina-backlog')" class="text-left px-4 py-3 mt-4 bg-[#1a5276] rounded-lg font-semibold transition-colors hover:bg-[#154360] focus:outline-none border-l-4 border-[#f1c40f] flex items-center justify-between text-white">
+                <span>Backlog</span>
+                <svg class="w-4 h-4 text-[#f1c40f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+            </button>
         </nav>
     </aside>
 
     <main class="flex-1 flex flex-col min-w-0">
         
-        <header class="bg-[#3498db] p-4 md:p-6 flex justify-center items-center relative shadow-md z-10">
-            <div class="relative w-full max-w-3xl">
+        <header class="bg-[#3498db] p-4 md:p-6 flex justify-between items-center relative shadow-md z-10 gap-4">
+            <!-- Barra de Pesquisa -->
+            <div class="relative w-full max-w-2xl flex-1">
                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                     <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </div>
-                <input type="text" id="campoPesquisa" onkeyup="pesquisarScripts()" class="w-full pl-11 pr-4 py-3 rounded-full border-none outline-none shadow-inner text-gray-700 bg-white placeholder-gray-400 transition-shadow focus:ring-2 focus:ring-[#2980b9]" placeholder="Pesquise por palavras na página atual...">
+                <input type="text" id="campoPesquisa" onkeyup="pesquisarScripts()" class="w-full pl-11 pr-4 py-2 md:py-3 rounded-full border-none outline-none shadow-inner text-gray-700 bg-white placeholder-gray-400 transition-shadow focus:ring-2 focus:ring-[#2980b9]" placeholder="Pesquise por palavras na página atual...">
             </div>
+            
+            <!-- Botão Dark Mode -->
+            <button onclick="toggleDarkMode()" class="bg-white/20 hover:bg-white/30 text-white p-2 md:p-3 rounded-full transition-colors flex-shrink-0" title="Alternar Modo Escuro">
+                <svg id="icon-sun" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <svg id="icon-moon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </button>
+
             <!-- Logo Canto Direito -->
-            <div class="hidden md:block absolute right-6 bg-white p-1 rounded-md shadow-sm h-[40px] flex items-center justify-center">
+            <div class="hidden md:block bg-white p-1 rounded-md shadow-sm h-[40px] flex items-center justify-center flex-shrink-0">
                  <img src="Logo_Haytek_RGB%20(1).png" alt="Logo Haytek" class="h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/120x40/ffffff/2980b9?text=Haytek&font=roboto';">
             </div>
         </header>
@@ -827,7 +925,8 @@ Estamos felizes com seu cadastro e queremos garantir que tudo esteja certinho pa
 
                 <div class="titulo-pagina bg-[#e8f5e9] border-l-4 border-r-4 border-[#27ae60] p-4 mb-8 rounded-lg text-center shadow-sm flex items-center justify-center">
                     <h2 class="text-[#27ae60] text-xl font-bold">
-                        💵 Dólar do Mês: R$ <span id="valor-dolar" class="border-b-2 border-dashed border-[#27ae60] px-1 outline-none cursor-text focus:bg-[#d5eed9] focus:border-solid transition" contenteditable="true" onblur="salvarDolar()" title="Clique para editar!">4,98</span> ✏️
+                        <!-- VALOR DO DÓLAR ATUALIZADO AQUI -->
+                        💵 Dólar do Mês: R$ <span id="valor-dolar" class="border-b-2 border-dashed border-[#27ae60] px-1 outline-none cursor-text focus:bg-[#d5eed9] focus:border-solid transition" contenteditable="true" onblur="salvarDolar()" title="Clique para editar!">5,13</span> ✏️
                     </h2>
                 </div>
 
@@ -1222,10 +1321,111 @@ Atenciosamente,</div>
                 </div>
             </div>
 
+            <!-- ========================================== -->
+            <!-- PÁGINA 6: BACKLOG (PLANEJAMENTO) -->
+            <!-- ========================================== -->
+            <div id="pagina-backlog" class="pagina fade-in">
+                <div class="text-center mb-8">
+                    <h1 class="titulo-pagina text-3xl font-bold text-[#2c3e50] mb-2">Backlog</h1>
+                    <p class="titulo-pagina text-gray-500">Lista de itens planejados para futuras atualizações no Portal Cadastro.</p>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 rounded shadow-sm text-yellow-800">
+                    <p class="text-sm font-semibold">⚠️ Esta aba é apenas de planejamento interno. Os scripts e regras listados aqui ainda precisam ser inseridos formalmente em suas respectivas páginas na próxima manutenção de código.</p>
+                </div>
+
+                <!-- Pendência: Novos Scripts -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6 shadow-sm">
+                    <h2 class="text-xl font-bold text-[#2980b9] mb-4 flex items-center border-b pb-2">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        Novos Scripts a Incluir
+                    </h2>
+                    <ul class="list-disc pl-5 space-y-2 text-sm text-gray-700">
+                        <li><strong>Alteração de CNPJ:</strong> Script direcionado ao vendedor.</li>
+                        <li><strong>Alteração de CNPJ:</strong> Script direcionado ao cliente.</li>
+                    </ul>
+                </div>
+
+                <!-- Pendência: Novas Redes -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6 shadow-sm">
+                    <h2 class="text-xl font-bold text-[#2980b9] mb-4 flex items-center border-b pb-2">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        Dados da Rede (Inclusão Normal)
+                    </h2>
+                    <p class="text-sm text-gray-500 mb-3">Redes aguardando estruturação em Cards na página de "Redes":</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Ótica Image</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Eyecare Health</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Fabrilen</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Otica Teresopolis</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Center By RCP</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Lab Multifoco</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Grupo Viena</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Ótica Visão de Todos</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Ótica Fluminense</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Ferrovia Eyewear</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Ipanema</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">VV</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Super Ótica São José</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Qualiotica</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Q Óculos</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Óticas Veja (Viegas - AM)</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Óticas Veja (Viegas -MA)</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Óticas Santa Isabel</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Óticas Marília</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Óticas Maria José</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Óticas do Bem</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Óticas ArcoVerde</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Óticas Veja / Mayer</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Óticas São José</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Óticas do Trabalhador</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Óticas da Gente</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Óticas Avenida Manaus</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Óticas Aveja</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Oculum</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">New Ótica</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Mercadotica</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Lunetterie</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Livo</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Labor Bukovski</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Itamaraty</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Indaiá</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">HTO</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Grupo Coscarelli</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Graciosa</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Fuel</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Fábrica de Óculos</span>
+                        <span class="bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full">Allemand</span>
+                    </div>
+                </div>
+
+                <!-- Pendência: Clientes em Campanha -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6 shadow-sm">
+                    <h2 class="text-xl font-bold text-[#d35400] mb-4 flex items-center border-b pb-2 border-orange-200">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
+                        Clientes em Campanha
+                    </h2>
+                    <p class="text-sm text-gray-700 mb-2">Estruturar lista ou identificação visual de clientes participando ativamente de campanhas (aguardando detalhamento de layout/dados).</p>
+                </div>
+
+                <!-- Pendência: Nova Aba de Processos -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6 shadow-sm">
+                    <h2 class="text-xl font-bold text-[#2980b9] mb-4 flex items-center border-b pb-2">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                        Criar Nova Aba: Processos
+                    </h2>
+                    <p class="text-sm text-gray-700 mb-2">Construir uma aba separada no menu lateral contendo fluxos padronizados.</p>
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700">
+                        <li>Processo: Login de acesso</li>
+                        <li>Processo: Endereço de entrega</li>
+                    </ul>
+                </div>
+            </div>
+
         </div> 
     </main>
 
-    <!-- Elemento Toast para Notificações (Substitui o Alert) -->
+    <!-- Elemento Toast para Notificações -->
     <div id="toast" class="fixed bottom-5 right-5 bg-green-600 text-white px-6 py-4 rounded-xl shadow-2xl transform transition-all duration-300 translate-y-20 opacity-0 z-50 flex items-center gap-3">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
         <span id="toast-message" class="font-bold">Copiado com sucesso!</span>
@@ -1235,17 +1435,63 @@ Atenciosamente,</div>
         // Inicialização Global
         var abaAtiva = 'pagina-scripts';
 
+        // Armazena o HTML original dos itens para a pesquisa conseguir "resetar" os highlights
+        var originalContents = {};
+
         window.onload = function() {
+            // 1. Persistência do Dólar
             var dolarSalvo = localStorage.getItem('dolarHaytek');
             if(dolarSalvo) {
                 var el = document.getElementById('valor-dolar');
                 if(el) el.innerText = dolarSalvo;
             }
+
+            // 2. Persistência da Última Aba
+            var abaSalva = localStorage.getItem('ultimaAbaHaytek');
+            if(abaSalva) {
+                mudarPagina(abaSalva);
+            } else {
+                mudarPagina('pagina-scripts');
+            }
+
+            // 3. Persistência do Dark Mode
+            var darkModeSalvo = localStorage.getItem('darkModeHaytek');
+            if(darkModeSalvo === 'ativo') {
+                document.body.classList.add('dark-mode');
+                document.getElementById('icon-sun').classList.remove('hidden');
+                document.getElementById('icon-moon').classList.add('hidden');
+            }
+
+            // 4. Salvar estado original dos textos pesquisáveis para o Highlighter funcionar
+            var itensPesquisaveis = document.querySelectorAll('.script-container, .card-rede');
+            itensPesquisaveis.forEach(function(item, index) {
+                // Atribui um ID temporário se não tiver, para salvar o HTML original
+                if(!item.id) item.id = 'pesquisavel-' + index;
+                originalContents[item.id] = item.innerHTML;
+            });
         };
 
         function salvarDolar() {
             var novoValor = document.getElementById('valor-dolar').innerText;
             localStorage.setItem('dolarHaytek', novoValor);
+        }
+
+        // Função do Dark Mode
+        function toggleDarkMode() {
+            var body = document.body;
+            body.classList.toggle('dark-mode');
+            
+            var isDark = body.classList.contains('dark-mode');
+            
+            if(isDark) {
+                localStorage.setItem('darkModeHaytek', 'ativo');
+                document.getElementById('icon-sun').classList.remove('hidden');
+                document.getElementById('icon-moon').classList.add('hidden');
+            } else {
+                localStorage.setItem('darkModeHaytek', 'inativo');
+                document.getElementById('icon-sun').classList.add('hidden');
+                document.getElementById('icon-moon').classList.remove('hidden');
+            }
         }
 
         function showToast(msg) {
@@ -1260,7 +1506,12 @@ Atenciosamente,</div>
 
         // Nova função de cópia sem o uso de Alert, focada na segurança do Browser
         function copiarTexto(idElemento) {
-            var texto = document.getElementById(idElemento).innerText;
+            var elemento = document.getElementById(idElemento);
+            
+            // Para não copiar o HTML do highlight (se houver), pegamos o innerText limpo.
+            // Pega uma cópia fresca do DOM para garantir que não tem tags de <mark> ou <span> injetadas.
+            var cloneElement = elemento.cloneNode(true);
+            var texto = cloneElement.innerText || cloneElement.textContent;
             
             if (navigator.clipboard && window.isSecureContext) {
                 navigator.clipboard.writeText(texto).then(() => {
@@ -1295,10 +1546,12 @@ Atenciosamente,</div>
         // Navegação de páginas (Single Page Application Behavior)
         function mudarPagina(idPaginaDesejada) {
             abaAtiva = idPaginaDesejada; 
+            localStorage.setItem('ultimaAbaHaytek', idPaginaDesejada); // Salva preferência local
             
             var barraPesquisa = document.getElementById('campoPesquisa');
             if(barraPesquisa) {
                 barraPesquisa.value = ''; 
+                resetarPesquisa(); // Limpa highlights ao trocar de aba
             }
             
             var todasAsPaginas = document.getElementsByClassName('pagina');
@@ -1311,15 +1564,12 @@ Atenciosamente,</div>
                 paginaDestino.classList.add('pagina-ativa');
             }
 
-            // Resetar a visibilidade de pesquisa
-            var todosItens = document.querySelectorAll('.script-container, .card-rede, .titulo-pagina');
-            for(var i = 0; i < todosItens.length; i++) {
-                todosItens[i].style.display = 'block';
-            }
-
             // Fechar submenu se for outra página que não a da marca
             if(idPaginaDesejada !== 'pagina-marca') {
-                document.getElementById('submenu-marca').classList.add('hidden');
+                var submenu = document.getElementById('submenu-marca');
+                if(submenu && !submenu.classList.contains('hidden')) {
+                    submenu.classList.add('hidden');
+                }
             }
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1332,12 +1582,31 @@ Atenciosamente,</div>
             }
         }
 
-        // Motor de busca interna da página
+        // Helper para remover Highlights
+        function resetarPesquisa() {
+            var itensPesquisaveis = document.querySelectorAll('.script-container, .card-rede');
+            itensPesquisaveis.forEach(function(item) {
+                item.style.display = 'block';
+                if(originalContents[item.id]) {
+                    item.innerHTML = originalContents[item.id]; // Restaura o HTML original sem as tags <span class="highlight">
+                }
+            });
+            
+            var titulos = document.querySelectorAll('.titulo-pagina');
+            titulos.forEach(t => t.style.display = 'block');
+        }
+
+        // Função para escapar caracteres especiais de Regex
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); 
+        }
+
+        // Motor de busca avançado com Highlighter
         function pesquisarScripts() {
             var input = document.getElementById('campoPesquisa');
             if(!input) return;
             
-            var termo = input.value.toLowerCase();
+            var termo = input.value.trim();
             var paginaAtual = document.getElementById(abaAtiva);
             
             if(!paginaAtual) return;
@@ -1345,23 +1614,61 @@ Atenciosamente,</div>
             var titulos = paginaAtual.getElementsByClassName('titulo-pagina');
             var itensPesquisaveis = paginaAtual.querySelectorAll('.script-container, .card-rede');
 
+            // Se o campo estiver vazio, reseta tudo
             if (termo === "") {
-                for (var i = 0; i < titulos.length; i++) titulos[i].style.display = 'block';
-                for (var i = 0; i < itensPesquisaveis.length; i++) itensPesquisaveis[i].style.display = 'block';
+                resetarPesquisa();
                 return;
             }
 
+            // Esconder títulos durante pesquisa para limpar visual
             for (var i = 0; i < titulos.length; i++) {
                 titulos[i].style.display = 'none';
             }
 
+            var regex = new RegExp("(" + escapeRegExp(termo) + ")", "gi");
+
             for (var i = 0; i < itensPesquisaveis.length; i++) {
-                var textoDoItem = itensPesquisaveis[i].innerText.toLowerCase();
+                var item = itensPesquisaveis[i];
+                var id = item.id;
                 
-                if (textoDoItem.includes(termo)) {
-                    itensPesquisaveis[i].style.display = 'block';
+                // Primeiro, restaurar o texto original para não pesquisar dentro das próprias tags HTML de highlight
+                if(originalContents[id]) {
+                    item.innerHTML = originalContents[id];
+                }
+
+                // Usamos textContent para buscar apenas em texto visível (ignorando tags HTML ocultas)
+                var textoDoItem = item.textContent || item.innerText;
+                
+                if (textoDoItem.toLowerCase().includes(termo.toLowerCase())) {
+                    item.style.display = 'block';
+                    
+                    // Aplica o highlight APENAS nos nós de texto para não corromper o HTML
+                    highlightTextNodes(item, regex);
                 } else {
-                    itensPesquisaveis[i].style.display = 'none';
+                    item.style.display = 'none';
+                }
+            }
+        }
+
+        // Função recursiva para aplicar o highlight apenas em textos, preservando as tags HTML (como botões e svgs)
+        function highlightTextNodes(element, regex) {
+            var childNodes = element.childNodes;
+            for (var i = childNodes.length - 1; i >= 0; i--) {
+                var node = childNodes[i];
+                
+                // Se for um nó de texto
+                if (node.nodeType === 3) {
+                    var match = node.nodeValue.match(regex);
+                    if (match) {
+                        var span = document.createElement('span');
+                        // Substitui o texto pelo texto envolto no span de highlight
+                        span.innerHTML = node.nodeValue.replace(regex, '<span class="highlight">$1</span>');
+                        element.replaceChild(span, node);
+                    }
+                } 
+                // Se for um elemento HTML (mas ignorar tags scripts e estilos)
+                else if (node.nodeType === 1 && node.nodeName !== "SCRIPT" && node.nodeName !== "STYLE" && !node.classList.contains('highlight')) {
+                    highlightTextNodes(node, regex);
                 }
             }
         }
